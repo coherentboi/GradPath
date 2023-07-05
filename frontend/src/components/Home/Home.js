@@ -1,84 +1,67 @@
-import React, { useState } from 'react';
-import { useDispatch } from "react-redux";
-import {submit_registration_form} from "../../actions/registration";
+//React Imports
+import React, {useState} from 'react';
 
-const Home = () => {
+//Component Imports
+import Registration from "./Registration/Registration";
 
-    const [formInputs, setFormInputs] = useState({first_name: "", last_name: "", phone: "", email: "", school: "", grade: "", subject: "", comments: ""})
+//MUI Imports
+import {Box, styled, Typography} from "@mui/material";
 
-    const dispatch = useDispatch();
+//Full Page Scrolling Imports
+import { FullPage, Slide } from 'react-full-page';
 
-    const handleChange = (e) => {
-        e.preventDefault();
-        setFormInputs({...formInputs, [e.target.name]: e.target.value});
-    }
+//Image Import
+import backgroundImage from "../../images/home_background_image.png";
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(submit_registration_form(formInputs));
-    }
+const HalfBox = styled('Box')({
+    width: "50%",
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+})
 
-    return(
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="first_name">First Name:</label>
-            <input
-                type="text"
-                name="first_name"
-                value={formInputs.first_name || ""}
-                onChange={handleChange}
-            />
-            <label htmlFor="last_name">Last Name:</label>
-            <input
-                type="text"
-                name="last_name"
-                value={formInputs.last_name || ""}
-                onChange={handleChange}
-            />
-            <label htmlFor="phone">Phone:</label>
-            <input
-                type="text"
-                name="phone"
-                value={formInputs.phone || ""}
-                onChange={handleChange}
-            />
-            <label htmlFor="email">Email:</label>
-            <input
-                type="text"
-                name="email"
-                value={formInputs.email || ""}
-                onChange={handleChange}
-            />
-            <label htmlFor="school">School:</label>
-            <input
-                type="text"
-                name="school"
-                value={formInputs.school || ""}
-                onChange={handleChange}
-            />
-            <label htmlFor="grade">Grade:</label>
-            <input
-                type="text"
-                name="grade"
-                value={formInputs.grade || ""}
-                onChange={handleChange}
-            />
-            <label htmlFor="subject">Subject:</label>
-            <input
-                type="text"
-                name="subject"
-                value={formInputs.subject || ""}
-                onChange={handleChange}
-            />
-            <label htmlFor="comments">Comments:</label>
-            <input
-                type="text"
-                name="comments"
-                value={formInputs.comments || ""}
-                onChange={handleChange}
-            />
-            <input type="submit" value="Submit"/>
-        </form>
-    )
-}
+const Home = ({setCurrentSlide}) => {
+
+    return (
+        <FullPage beforeChange={({ to }) => setCurrentSlide(to)}>
+            <Slide>
+                <Box sx={{ display: "flex", width: "100vw", height: "100vh", bgcolor: "background.main"}}>
+                    <Box sx={{width: "100vw", height: "100vh", display: {xs: "none", md: "flex"}}}>
+                        <HalfBox>
+                            <Box sx={{display: "flex", flexDirection: "column", width: "90%", height: "50%", marginLeft: "60px"}}>
+                                <Typography sx={{color: "black", fontSize: "40px", fontFamily: 'Open Sans, sans-serif', fontWeight: "700", marginBottom: "10px"}}>
+                                    Get IB help from:
+                                </Typography>
+                                <Typography sx={{fontSize: "60px",fontFamily: 'Open Sans, sans-serif', fontWeight: "700", transform: "skewX(-20deg)", marginBottom: "40px"}}>
+                                    <Box component="mark" sx={{color: "background.main", backgroundColor: "primary.main", padding: "0px 20px", borderRadius: "5px"}}>REAL IB STUDENTS!</Box>
+                                </Typography>
+                                <Typography sx={{fontSize: "18px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey"}}>
+                                    Made up of
+                                </Typography>
+                            </Box>
+                        </HalfBox>
+                        <HalfBox>
+
+                        </HalfBox>
+                    </Box>
+
+                </Box>
+            </Slide>
+            <Slide>
+                <Box sx={{ width: "100vw", height: "100vh" }}>
+
+                </Box>
+            </Slide>
+            <Slide>
+                <Box sx={{display: "flex", width: "100vw", height: "100vh", bgcolor: "background.main"}}>
+                    <Box sx={{width: "100%", height: "calc(100%-90px)", marginTop: "90px", display: "flex"}}>
+                        <Registration/>
+                    </Box>
+                </Box>
+            </Slide>
+        </FullPage>
+    );
+};
 
 export default Home;
