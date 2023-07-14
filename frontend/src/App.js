@@ -19,8 +19,8 @@ const palette = createTheme({
     palette: {
         primary: {
             light: '#5A5DEF',
-            main: '#2124DF',
-            dark: '#0D0F85',
+            main: '#1216D3',
+            dark: '#02021E',
         },
         secondary: {
             light: '#FBFEBB',
@@ -28,10 +28,10 @@ const palette = createTheme({
             dark: '#B5BE03'
         },
         background: {
-            light: '#FFFFFA',
+            light: '#E2E2E2',
             main: '#FFFFFA',
             dark: '#FFFFFA'
-        }
+        },
     },
 });
 
@@ -43,7 +43,7 @@ const App = () => {
         <ThemeProvider theme={palette}>
             <BrowserRouter>
                 <Box sx={{display: "flex", width: "100%", height: "100%", flexDirection: "column"}}>
-                    <Box sx={{position: "fixed", top: "0", marginBottom: "10px", width: "calc(100% - 20px)", margin: "10px", zIndex: "1000"}}>
+                    <Box sx={{position: "fixed", top: "0", width: "98vw", margin: "2vh", zIndex: "1000"}}>
                         <Navbar currentSlide={currentSlide}/>
                     </Box>
                     <Box sx={{display: "flex", width: "100%", flexDirection: "column"}}>

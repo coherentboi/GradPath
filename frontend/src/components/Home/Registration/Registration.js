@@ -31,7 +31,7 @@ const Registration = () => {
     }
 
     return(
-        <Box sx={{width: "100%", height: "100%"}}>
+        <Box sx={{display: "flex", width: "100%", height: "100%", alignItems: "center"}}>
             <Box sx={{display: {xs: "none", md: "flex"}}}>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="first_name">First Name:</label>

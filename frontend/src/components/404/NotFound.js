@@ -1,8 +1,11 @@
 import React from 'react';
+import {Box} from "@mui/material";
 
 const NotFound = () => {
     return(
-        ["404 Not Found"]
+        <Box sx={{width: "100vw", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center"}}>
+
+        </Box>
     )
 }
 

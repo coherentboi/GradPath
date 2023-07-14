@@ -51,9 +51,9 @@ const Navbar = ({currentSlide}) => {
     }
 
     return(
-        <AppBar color={currentSlide === 0 ? "background" : "primary"} elevation={currentSlide === 0 ? 0 : 8} sx={{borderRadius: "5px", transition: "0.3s"}} position="sticky">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
+        <AppBar color={currentSlide === 0 ? "background" : "primary"} elevation={currentSlide === 0 ? 0 : 16} sx={{borderRadius: "5px", transition: "0.3s", display: "flex", width: "100%"}} position="sticky">
+            <Container maxWidth="xl" sx={{width: "100%", display: "flex"}}>
+                <Toolbar disableGutters sx={{width: "100%", display: "flex"}}>
                     <Typography
                         variant="h6"
                         noWrap
