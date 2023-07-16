@@ -16,3 +16,5 @@ class RegistrationForm(models.Model):
 
     def __str__(self):
         return f'{"[Reviewed] " if self.reviewed else ""}{self.first_name} {self.last_name}'
+
+
