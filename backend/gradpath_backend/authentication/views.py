@@ -1,10 +1,16 @@
+from django.contrib.auth.models import User
 from django.http import JsonResponse
 from knox.models import AuthToken
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from authentication.serializers import UserSerializer, LoginSerializer
+from authentication.serializers import UserSerializer, LoginSerializer, RegisterSerializer
+
+
+class RegisterView(generics.CreateAPIView):
+    serializer_class = RegisterSerializer
+    queryset = User.objects.all()
 
 
 class LoginView(generics.GenericAPIView):
