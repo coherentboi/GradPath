@@ -1,18 +1,36 @@
 //React Imports
 import React, {useState} from 'react';
+import {useNavigate} from "react-router-dom";
 
 //MUI Material Imports
-import {AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography} from "@mui/material";
+import {
+    AppBar,
+    Avatar,
+    Box,
+    Button,
+    Container,
+    IconButton,
+    Menu,
+    MenuItem,
+    Toolbar,
+    Tooltip,
+    Typography
+} from "@mui/material";
 
 //Icon Imports
-import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
-import {useNavigate} from "react-router-dom";
+import GradpathLogo from '../../images/gradpathlogo.svg';
+
 
 const pages = ['Programs', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const Navbar = ({currentSlide}) => {
+const Navbar = ({navColour}) => {
+
+    //User
+    const [user] = useState(JSON.parse(localStorage.getItem('profile')));
+
+    console.log(user);
 
     //Initialize Navigation
     const navigate = useNavigate();
@@ -50,8 +68,14 @@ const Navbar = ({currentSlide}) => {
         navigate(`/${page.toLowerCase()}`);
     }
 
+    //Navigate to Login Page
+    const login = (e) => {
+        e.preventDefault();
+        navigate("/auth");
+    }
+
     return(
-        <AppBar color={currentSlide === 0 ? "background" : "primary"} elevation={currentSlide === 0 ? 0 : 16} sx={{borderRadius: "5px", transition: "0.3s", display: "flex", width: "100%"}} position="sticky">
+        <AppBar color={navColour} elevation={navColour === "background" ? 0 : 16} sx={{borderRadius: "5px", transition: "0.3s", display: "flex", width: "100%"}} position="sticky">
             <Container maxWidth="xl" sx={{width: "100%", display: "flex"}}>
                 <Toolbar disableGutters sx={{width: "100%", display: "flex"}}>
                     <Typography
@@ -70,8 +94,7 @@ const Navbar = ({currentSlide}) => {
                             alignItems: "center"
                         }}
                     >
-                        <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-                        GRADPATH
+                        <img src={GradpathLogo} alt="logo" style={{ display: { xs: 'none', md: 'flex' }, height: "40px"}} />
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -128,8 +151,7 @@ const Navbar = ({currentSlide}) => {
                             alignItems: "center",
                         }}
                     >
-                        <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-                        LOGO
+                        <img src={GradpathLogo} alt="logo" style={{ display: { xs: 'flex', md: 'none' }, height: "40px"}} />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex'}, alignItems: "center" }}>
                         {pages.map((page) => (
@@ -144,35 +166,48 @@ const Navbar = ({currentSlide}) => {
                         ))}
                     </Box>
 
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography onClick={() => handlePage(setting)} textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
+                    {user && (
+                        <Box sx={{ flexGrow: 0 }}>
+                            <Tooltip title="Open settings">
+                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                </IconButton>
+                            </Tooltip>
+                            <Menu
+                                sx={{ mt: '45px' }}
+                                id="menu-appbar"
+                                anchorEl={anchorElUser}
+                                anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                open={Boolean(anchorElUser)}
+                                onClose={handleCloseUserMenu}
+                            >
+                                {settings.map((setting) => (
+                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                        <Typography onClick={() => handlePage(setting)} textAlign="center">{setting}</Typography>
+                                    </MenuItem>
+                                ))}
+                            </Menu>
+                        </Box>
+                    )}
+                    {!user && (
+                        <Box sx={{flexGrow: 0}}>
+                            <Button
+                                onClick={login}
+                                color="inherit"
+                                sx={{ my: 2, display: 'block' , transition: '0s', alignItems: "center"}}
+                            >
+                                <Typography sx={{color: "inherit", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", alignItems: "center"}}>Login</Typography>
+                            </Button>
+                        </Box>
+                    )}
                 </Toolbar>
             </Container>
         </AppBar>

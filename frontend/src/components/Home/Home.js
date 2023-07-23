@@ -1,5 +1,5 @@
 //React Imports
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 //Component Imports
 import Registration from "./Registration/Registration";
@@ -23,11 +23,23 @@ const HalfBox = styled(Box)({
     justifyContent: "center"
 })
 
-const Home = ({setCurrentSlide}) => {
+
+const Home = ({setNavColour}) => {
+
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    useEffect(() => {
+        if(currentSlide === 0){
+            setNavColour("background");
+        }
+        else{
+            setNavColour("primary");
+        }
+    }, [currentSlide])
 
     return (
-        <FullPage beforeChange={({ to }) => setCurrentSlide(to)}>
-            <Slide>
+        <FullPage beforeChange={({ to }) => setCurrentSlide(to)} style={{width: "100wh", height: "100vh"}}>
+            <Slide style={{width: "100wh", height: "100vh"}}>
                 <Box sx={{ display: "flex", width: "100vw", height: "100vh", bgcolor: "background.main"}}>
                     <Box sx={{width: "100vw", height: "100vh", display: {xs: "none", md: "flex"}}}>
                         <HalfBox>
@@ -60,11 +72,11 @@ const Home = ({setCurrentSlide}) => {
 
                 </Box>
             </Slide>
-            <Slide>
+            <Slide style={{width: "100wh", height: "100vh"}}>
                 <Box sx={{ display: "flex", width: "100vw", height: "100vh", bgcolor: "background.main"}}>
                     <Box sx={{width: "100vw", height: "90vh", marginTop: "10vh", display: {xs: "none", md: "flex"}}}>
                         <HalfBox>
-                            <Box sx={{display: "flex", flexDirection: "row", width: "100%", height: "100%", marginLeft: '20px', marginRight: '20px'}}>
+                            <Box sx={{display: "flex", flexDirection: "row", width: "calc(100%-40px)", height: "100%", marginLeft: '20px', marginRight: '20px'}}>
                                 <HalfBox>
                                     <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", backgroundColor: "background.main", width: "100%", height: "90%", marginLeft: "20px", marginRight: "20px", borderRadius: "50px 0 50px 0", alignItems: "center"}}>
                                         <img src={mathematicsImage} alt="" style={{display: "flex", width: "100%", height: "40%", borderRadius: "47px 0 0 0", objectFit: "cover"}}/>
@@ -90,7 +102,7 @@ const Home = ({setCurrentSlide}) => {
                                     </Box>
                                 </HalfBox>
                                 <HalfBox>
-                                    <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", backgroundColor: "background.main", width: "100%", height: "90%", marginLeft: "20px", marginRight: "20px", borderRadius: "50px 0 50px 0", alignItems: "center"}}>
+                                    <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", backgroundColor: "background.main", width: "calc(100%-40px)", height: "90%", marginLeft: "20px", marginRight: "20px", borderRadius: "50px 0 50px 0", alignItems: "center"}}>
                                         <img src={englishImage} alt="" style={{display: "flex", width: "100%", height: "40%", borderRadius: "47px 0 0 0", objectFit: "cover"}}/>
                                         <Box sx={{display: "flex", width: "100%", height: "10%", justifyContent:"center", alignItems: "center", borderLeft: "1px solid", borderRight: "1px solid", borderColor: "background.light"}}>
                                             <Typography sx={{fontSize: "28px", fontFamily: 'Open Sans, sans-serif', fontWeight: "700", color: "black"}}>
@@ -147,9 +159,9 @@ const Home = ({setCurrentSlide}) => {
                     </Box>
                 </Box>
             </Slide>
-            <Slide>
+            <Slide style={{width: "100wh", height: "100vh"}}>
                 <Box sx={{display: "flex", width: "100vw", height: "100vh", bgcolor: "background.main", justifyContent: "center", alignItems: "center"}}>
-                    <Box sx={{display: {xs: "none", md: "flex"}, width: "90%", height: "100%"}}>
+                    <Box sx={{width: "100vw", height: "90vh", marginTop: "10vh", display: {xs: "none", md: "flex"}, alignItems: "center", justifyContent: "center"}}>
                         <Registration/>
                     </Box>
                 </Box>
