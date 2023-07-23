@@ -20,6 +20,8 @@ import {
 //Icon Imports
 import MenuIcon from '@mui/icons-material/Menu';
 import GradpathLogo from '../../images/gradpathlogo.svg';
+import {useDispatch} from "react-redux";
+import {logout} from "../../actions/auth";
 
 
 const pages = ['Programs', 'About'];
@@ -31,6 +33,8 @@ const Navbar = ({navColour}) => {
     const [user] = useState(JSON.parse(localStorage.getItem('profile')));
 
     console.log(user);
+
+    const dispatch = useDispatch();
 
     //Initialize Navigation
     const navigate = useNavigate();
@@ -65,7 +69,15 @@ const Navbar = ({navColour}) => {
 
     //Handle Page Choice
     const handlePage = (page) => {
-        navigate(`/${page.toLowerCase()}`);
+        switch (page.toLowerCase()) {
+            case "logout":
+                dispatch(logout()).then(r => {
+                    window.location.reload();
+                })
+                break;
+            default:
+                navigate(`/${page.toLowerCase()}`);
+        }
     }
 
     //Navigate to Login Page
@@ -76,8 +88,8 @@ const Navbar = ({navColour}) => {
 
     return(
         <AppBar color={navColour} elevation={navColour === "background" ? 0 : 16} sx={{borderRadius: "5px", transition: "0.3s", display: "flex", width: "100%"}} position="sticky">
-            <Container maxWidth="xl" sx={{width: "100%", display: "flex"}}>
-                <Toolbar disableGutters sx={{width: "100%", display: "flex"}}>
+            <Container maxWidth="xl">
+                <Toolbar disableGutters>
                     <Typography
                         variant="h6"
                         noWrap
@@ -170,7 +182,7 @@ const Navbar = ({navColour}) => {
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                    <Avatar sx={{backgroundColor: navColour === "primary" ? "background.main" : "primary.main", color: navColour === "primary" ? "primary.main" : "background.main"}} alt={user.user.username}>{user.user.username.charAt(0)}</Avatar>
                                 </IconButton>
                             </Tooltip>
                             <Menu
