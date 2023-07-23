@@ -1,5 +1,5 @@
-import phonenumbers
 from rest_framework import serializers
+import phonenumbers
 
 from .models import RegistrationForm
 
@@ -8,7 +8,8 @@ class RegistrationFormSerializer(serializers.ModelSerializer):
     class Meta:
         model = RegistrationForm
         fields = ('first_name', 'last_name', 'phone', 'email',
-                  'school', 'grade', 'subject', 'comments', 'created_at', 'updated_at')
+                  'school', 'grade', 'subject', 'comments',
+                  'how_found', 'is_parent', 'created_at', 'updated_at')
 
     def validate_phone(self, value):
         try:
