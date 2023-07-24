@@ -29,13 +29,13 @@ export const logout = () => async(dispatch) => {
 
 export const register = (inputs) => async(dispatch) => {
     try{
-        const { data } = await api.register(inputs);
+        await api.register(inputs);
 
         return dispatch(login(inputs));
     }
     catch(error){
         console.log(error);
 
-        return error.response.data.non_field_errors;
+        return error.response.data;
     }
 }
