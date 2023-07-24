@@ -11,6 +11,10 @@ import { submit_registration_form } from '../../../actions/registration';
 import {Box, Button, Paper, styled, Typography} from "@mui/material";
 import AdbIcon from "@mui/icons-material/Adb";
 
+//Image Imports
+import Panel1 from "../../../images/home_page4_panel_1.png"
+import Panel2 from "../../../images/home_page4_panel_2.png"
+
 const MdInputField = styled('div')({
     width: "90%",
     display: "flex",
@@ -72,7 +76,7 @@ const Registration = () => {
     return(
         <Box sx={{display: "flex", flexDirection: "row", width: "95%", height: "90%", alignItems: "center", justifyContent: "center", borderRadius: "10px"}}>
             <Box sx={{display: "flex", flexDirection: "column", width: "20%", height: "100%"}}>
-
+                <img style={{height: "100%", width: "calc(100% - 20px)", marginRight: "20px", objectFit: "cover", borderRadius: "5px"}} src={Panel1} alt=""/>
             </Box>
             <Paper elevation={8} sx={{display: "flex", flexDirection: "column", width: "60%", height: "100%", alignItems: "center", justifyContent: "center"}}>
                 <form style={{display: "flex", flexDirection: "column", width: "95%", height: "90%", alignItems: "center", justifyContent: "center", marginTop: "30px"}} onSubmit={handleSubmit}>
@@ -93,6 +97,7 @@ const Registration = () => {
                                         value={formInputs.first_name || ""}
                                         onChange={handleChange}
                                         placeholder="E.g. John"
+                                        autoComplete="off"
                                     />
                                 </Box>
                                 <Box sx={{display: "flex", width: "calc(50% - 10px)", flexDirection: "column", marginBottom: "30px", marginLeft: "10px"}}>
@@ -103,6 +108,7 @@ const Registration = () => {
                                         value={formInputs.last_name || ""}
                                         onChange={handleChange}
                                         placeholder="E.g. Doe"
+                                        autoComplete="off"
                                     />
                                 </Box>
                             </Box>
@@ -114,6 +120,7 @@ const Registration = () => {
                                     value={formInputs.email || ""}
                                     onChange={handleChange}
                                     placeholder="E.g. johndoe@gradpathtutoring.com"
+                                    autoComplete="off"
                                 />
                             </MdInputField>
                             <MdInputField>
@@ -124,6 +131,7 @@ const Registration = () => {
                                     value={formInputs.phone || ""}
                                     onChange={handleChange}
                                     placeholder="E.g. 613-456-7890"
+                                    autoComplete="off"
                                 />
                             </MdInputField>
                         </HalfBox>
@@ -137,6 +145,7 @@ const Registration = () => {
                                         value={formInputs.school || ""}
                                         onChange={handleChange}
                                         placeholder="E.g. Merivale High School"
+                                        autoComplete="off"
                                     />
                                 </Box>
                                 <Box sx={{display: "flex", width: "calc(30% - 10px)", flexDirection: "column", marginBottom: "30px", marginLeft: "10px"}}><MdLabel htmlFor="grade">Grade:</MdLabel>
@@ -146,6 +155,7 @@ const Registration = () => {
                                         value={formInputs.grade || ""}
                                         onChange={handleChange}
                                         placeholder="E.g. 9"
+                                        autoComplete="off"
                                     />
                                 </Box>
                             </Box>
@@ -157,6 +167,7 @@ const Registration = () => {
                                     value={formInputs.subject || ""}
                                     onChange={handleChange}
                                     placeholder="E.g. Mathematics, English, Science"
+                                    autoComplete="off"
                                 />
                             </MdInputField>
                             <MdInputField>
@@ -167,6 +178,7 @@ const Registration = () => {
                                     value={formInputs.comments || ""}
                                     onChange={handleChange}
                                     placeholder="Please leave any questions or concerns here!"
+                                    autoComplete="off"
                                 />
                             </MdInputField>
                         </HalfBox>
@@ -177,7 +189,7 @@ const Registration = () => {
                 </Box>
             </Paper>
             <Box sx={{display: "flex", flexDirection: "column", width: "20%", height: "100%"}}>
-
+                <img style={{height: "100%", width: "calc(100% - 20px)", marginLeft: "20px", objectFit: "cover", borderRadius: "5px"}} src={Panel2} alt=""/>
             </Box>
         </Box>
     )

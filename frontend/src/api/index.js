@@ -13,6 +13,7 @@ API.interceptors.request.use((req) => {
 //Authentication
 export const login = (inputs) => API.post('/auth/login/', inputs);
 export const logout = () => API.post('/auth/logout/', null);
+export const register = (inputs) => API.post('/auth/register/', inputs)
 
 //Registration Form
 export const submit_registration_form = (inputs) =>  API.post('/registration-form/', inputs);
