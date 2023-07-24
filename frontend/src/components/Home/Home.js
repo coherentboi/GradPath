@@ -38,10 +38,10 @@ const Home = ({setNavColour}) => {
     }, [currentSlide])
 
     return (
-        <FullPage beforeChange={({ to }) => setCurrentSlide(to)} style={{width: "100wh", height: "100vh"}}>
-            <Slide style={{width: "100wh", height: "100vh"}}>
-                <Box sx={{ display: "flex", width: "100vw", height: "100vh", bgcolor: "background.main"}}>
-                    <Box sx={{width: "100vw", height: "100vh", display: {xs: "none", md: "flex"}}}>
+        <FullPage beforeChange={({ to }) => setCurrentSlide(to)} style={{width: "100%", height: "100%"}}>
+            <Slide style={{display: "flex", width: "100%", height: "100%"}}>
+                <Box sx={{ display: "flex", width: "100%", height: "100%", bgcolor: "background.main"}}>
+                    <Box sx={{width: "100%", height: "100%", display: {xs: "none", md: "flex"}}}>
                         <HalfBox>
                             <Box sx={{display: "flex", flexDirection: "column", width: "calc(95% - 40px)", height: "100%", justifyContent: "center", marginLeft: "40px"}}>
                                 <Typography sx={{color: "black", fontSize: "40px", fontFamily: 'Open Sans, sans-serif', fontWeight: "700", marginBottom: "10px"}}>
@@ -69,14 +69,13 @@ const Home = ({setNavColour}) => {
                             </Box>
                         </HalfBox>
                     </Box>
-
                 </Box>
             </Slide>
-            <Slide style={{width: "100wh", height: "100vh"}}>
-                <Box sx={{ display: "flex", width: "100vw", height: "100vh", bgcolor: "background.main"}}>
-                    <Box sx={{width: "100vw", height: "90vh", marginTop: "10vh", display: {xs: "none", md: "flex"}}}>
+            <Slide style={{display: "flex", width: "100%", height: "100%"}}>
+                <Box sx={{ display: "flex", width: "100%", height: "100%", bgcolor: "background.main"}}>
+                    <Box sx={{width: "100%", height: "90%", marginTop: "10vh", display: {xs: "none", md: "flex"}}}>
                         <HalfBox>
-                            <Box sx={{display: "flex", flexDirection: "row", width: "calc(100%-40px)", height: "100%", marginLeft: '20px', marginRight: '20px'}}>
+                            <Box sx={{display: "flex", flexDirection: "row", width: "calc(100% - 40px)", height: "100%", marginLeft: '20px', marginRight: '20px'}}>
                                 <HalfBox>
                                     <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", backgroundColor: "background.main", width: "100%", height: "90%", marginLeft: "20px", marginRight: "20px", borderRadius: "50px 0 50px 0", alignItems: "center"}}>
                                         <img src={mathematicsImage} alt="" style={{display: "flex", width: "100%", height: "40%", borderRadius: "47px 0 0 0", objectFit: "cover"}}/>
@@ -86,13 +85,13 @@ const Home = ({setNavColour}) => {
                                             </Typography>
                                         </Box>
                                         <Box sx={{display: "flex", flexDirection: "column", width: "100%", height: "35%", alignItems: "center", borderLeft: "1px solid", borderRight: "1px solid", borderColor: "background.light"}}>
-                                            <Typography sx={{width: "calc(100%-30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
+                                            <Typography sx={{width: "calc(100% - 30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
                                                 From Algebra to Calculus, our tutors are very knowledgeable in every area of the curriculum, so whether you choose SL or HL, rest assured you will be in good hands.
                                             </Typography>
-                                            <Typography sx={{marginTop: "20px", width: "calc(100%-30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
+                                            <Typography sx={{marginTop: "20px", width: "calc(100% - 30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
                                                 If you're trying to get into IB, our tutors will be happy to show you the essentials and help prepare you for the Mathematics task.
                                             </Typography>
-                                            <Typography sx={{marginTop: "20px", width: "calc(100%-30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
+                                            <Typography sx={{marginTop: "20px", width: "calc(100% - 30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
                                                 Click below to learn more!
                                             </Typography>
                                         </Box>
@@ -102,7 +101,7 @@ const Home = ({setNavColour}) => {
                                     </Box>
                                 </HalfBox>
                                 <HalfBox>
-                                    <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", backgroundColor: "background.main", width: "calc(100%-40px)", height: "90%", marginLeft: "20px", marginRight: "20px", borderRadius: "50px 0 50px 0", alignItems: "center"}}>
+                                    <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", backgroundColor: "background.main", width: "calc(100% - 40px)", height: "90%", marginLeft: "20px", marginRight: "20px", borderRadius: "50px 0 50px 0", alignItems: "center"}}>
                                         <img src={englishImage} alt="" style={{display: "flex", width: "100%", height: "40%", borderRadius: "47px 0 0 0", objectFit: "cover"}}/>
                                         <Box sx={{display: "flex", width: "100%", height: "10%", justifyContent:"center", alignItems: "center", borderLeft: "1px solid", borderRight: "1px solid", borderColor: "background.light"}}>
                                             <Typography sx={{fontSize: "28px", fontFamily: 'Open Sans, sans-serif', fontWeight: "700", color: "black"}}>
@@ -110,13 +109,13 @@ const Home = ({setNavColour}) => {
                                             </Typography>
                                         </Box>
                                         <Box sx={{display: "flex", flexDirection: "column", width: "100%", height: "35%", alignItems: "center", borderLeft: "1px solid", borderRight: "1px solid", borderColor: "background.light"}}>
-                                            <Typography sx={{width: "calc(100%-30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
+                                            <Typography sx={{width: "calc(100% - 30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
                                                 Our tutors will be happy to walk you through the English curriculum and requirements. Our tutors will be happy to help you prepare for the IO, Paper 1, Paper 2 and HL Essay.
                                             </Typography>
-                                            <Typography sx={{marginTop: "20px", width: "calc(100%-30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
+                                            <Typography sx={{marginTop: "20px", width: "calc(100% - 30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
                                                 If you're trying to get into IB, our tutors will be happy to correct your applications and English writing task.
                                             </Typography>
-                                            <Typography sx={{marginTop: "20px", width: "calc(100%-30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
+                                            <Typography sx={{marginTop: "20px", width: "calc(100% - 30px)", fontSize: "12px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "grey", marginLeft: "15px", marginRight: "15px"}}>
                                                 Click below to learn more!
                                             </Typography>
                                         </Box>
@@ -159,9 +158,9 @@ const Home = ({setNavColour}) => {
                     </Box>
                 </Box>
             </Slide>
-            <Slide style={{width: "100wh", height: "100vh"}}>
-                <Box sx={{display: "flex", width: "100vw", height: "100vh", bgcolor: "background.main", justifyContent: "center", alignItems: "center"}}>
-                    <Box sx={{width: "100vw", height: "90vh", marginTop: "10vh", display: {xs: "none", md: "flex"}, alignItems: "center", justifyContent: "center"}}>
+            <Slide style={{display: "flex", width: "100%", height: "100%"}}>
+                <Box sx={{display: "flex", width: "100%", height: "100%", bgcolor: "background.main", justifyContent: "center", alignItems: "center"}}>
+                    <Box sx={{width: "100%", height: "90%", marginTop: "10vh", display: {xs: "none", md: "flex"}, alignItems: "center", justifyContent: "center"}}>
                         <Registration/>
                     </Box>
                 </Box>
