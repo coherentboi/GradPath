@@ -43,7 +43,7 @@ const Home = ({setNavColour}) => {
                 <Box sx={{ display: "flex", width: "100vw", height: "100vh", bgcolor: "background.main"}}>
                     <Box sx={{width: "100vw", height: "100vh", display: {xs: "none", md: "flex"}}}>
                         <HalfBox>
-                            <Box sx={{display: "flex", flexDirection: "column", width: "90%", height: "100%", justifyContent: "center", marginLeft: "40px"}}>
+                            <Box sx={{display: "flex", flexDirection: "column", width: "calc(95% - 40px)", height: "100%", justifyContent: "center", marginLeft: "40px"}}>
                                 <Typography sx={{color: "black", fontSize: "40px", fontFamily: 'Open Sans, sans-serif', fontWeight: "700", marginBottom: "10px"}}>
                                     Get IB help from:
                                 </Typography>
@@ -64,7 +64,7 @@ const Home = ({setNavColour}) => {
                             </Box>
                         </HalfBox>
                         <HalfBox>
-                            <Box sx={{display: "flex", width: "90%", height: "100%", marginLeft: "20px", marginRight: "20px", alignItems: "center"}}>
+                            <Box sx={{display: "flex", width: "calc(90% - 20px)", height: "100%", marginLeft: "20px", marginRight: "20px", alignItems: "center"}}>
                                 <img src={tutoringImage} alt="" style={{objectFit: "cover", width: "100%", height: "65%", borderRadius: "20px"}}/>
                             </Box>
                         </HalfBox>
