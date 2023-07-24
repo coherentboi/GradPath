@@ -5,7 +5,7 @@ import {Box, Button, styled, Typography} from "@mui/material";
 import GradpathLogo from "../../images/gradpathlogo.svg";
 import AuthImage from "../../images/auth_tutoring.png";
 import {useDispatch} from "react-redux";
-import {login} from "../../actions/auth";
+import {login, register} from "../../actions/auth";
 import {useNavigate} from "react-router-dom";
 
 const MdInputField = styled('div')({
@@ -58,7 +58,7 @@ const Auth = ({setNavColour}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const [inputs, setInputs] = useState({username: "", password: "", confirmPassword: ""});
+    const [inputs, setInputs] = useState({username: "", email: "", password: "", confirmPassword: ""});
     const [error, setError] = useState("");
     const [signup, setSignup] = useState(false);
 
@@ -77,20 +77,47 @@ const Auth = ({setNavColour}) => {
             setError("Please input a password.");
             return;
         }
-        dispatch(login(inputs)).then((r) => {
-            console.log(r);
-            if(r === "success"){
-                window.location.reload();
-            }
-            else{
-                if(r !== undefined){
-                    setError(r[0]);
+        if(!signup){
+            dispatch(login(inputs)).then((r) => {
+                console.log(r);
+                if(r === "success"){
+                    window.location.reload();
                 }
                 else{
-                    setError("An unknown error occurred. Please try again later.")
+                    if(r !== undefined){
+                        setError(r[0]);
+                    }
+                    else{
+                        setError("An unknown error occurred. Please try again later.")
+                    }
                 }
+            });
+        }
+        else{
+            if(inputs.email === ""){
+                setError("Please input an email.");
+                return;
             }
-        });
+            if(inputs.password !== inputs.confirmPassword){
+                setError("Passwords don't match.");
+                return;
+            }
+            dispatch(register(inputs)).then((r) => {
+                console.log(r);
+                if(r === "success"){
+                    window.location.reload();
+                }
+                else{
+                    if(r !== undefined){
+                        setError(r[0]);
+                    }
+                    else{
+                        setError("An unknown error occurred. Please try again later.")
+                    }
+                }
+            })
+        }
+
     }
 
     useEffect(() => {
@@ -140,6 +167,7 @@ const Auth = ({setNavColour}) => {
                                             name="username"
                                             value={inputs.username}
                                             onChange={handleInput}
+                                            autoComplete="off"
                                         />
                                     </MdInputField>
                                     <MdLabel htmlFor="password">Password</MdLabel>
@@ -149,6 +177,7 @@ const Auth = ({setNavColour}) => {
                                             name="password"
                                             value={inputs.password}
                                             onChange={handleInput}
+                                            autoComplete="off"
                                         />
                                     </MdInputField>
                                     <LinkLikeButton disableRipple sx={{alignSelf: "flex-end"}}>Forgot Password?</LinkLikeButton>
@@ -190,15 +219,32 @@ const Auth = ({setNavColour}) => {
                             </Box>
                             <Box sx={{display: "flex", flexDirection: "column", width: "calc(100% - 60px)", margin: "30px 30px 0px 30px", height: "calc(65% - 30px)"}}>
                                 <form style={{display: "flex", flexDirection: "column", width:"100%", height: "100%"}} onSubmit={handleSubmit}>
-                                    <MdLabel htmlFor="username">Username</MdLabel>
-                                    <MdInputField>
-                                        <MdStyledInput
-                                            type="text"
-                                            name="username"
-                                            value={inputs.username}
-                                            onChange={handleInput}
-                                        />
-                                    </MdInputField>
+                                    <Box sx={{display: "flex", flexDirection: "row", width: "100%"}}>
+                                        <Box sx={{display: "flex", flexDirection: "column", width: 'calc(50% - 10px)', marginRight: "10px"}}>
+                                            <MdLabel htmlFor="username">Username</MdLabel>
+                                            <MdInputField>
+                                                <MdStyledInput
+                                                    type="text"
+                                                    name="username"
+                                                    value={inputs.username}
+                                                    onChange={handleInput}
+                                                    autoComplete="off"
+                                                />
+                                            </MdInputField>
+                                        </Box>
+                                        <Box sx={{display: "flex", flexDirection: "column", width: 'calc(50% - 10px)', marginLeft: "10px"}}>
+                                            <MdLabel htmlFor="email">Email</MdLabel>
+                                            <MdInputField>
+                                                <MdStyledInput
+                                                    type="text"
+                                                    name="email"
+                                                    value={inputs.email}
+                                                    onChange={handleInput}
+                                                    autoComplete="off"
+                                                />
+                                            </MdInputField>
+                                        </Box>
+                                    </Box>
                                     <Box sx={{display: "flex", flexDirection: "row", width: "100%"}}>
                                         <Box sx={{display: "flex", flexDirection: "column", width: 'calc(50% - 10px)', marginRight: "10px"}}>
                                             <MdLabel htmlFor="password">Password</MdLabel>
@@ -208,6 +254,7 @@ const Auth = ({setNavColour}) => {
                                                     name="password"
                                                     value={inputs.password}
                                                     onChange={handleInput}
+                                                    autoComplete="off"
                                                 />
                                             </MdInputField>
                                         </Box>
@@ -219,6 +266,7 @@ const Auth = ({setNavColour}) => {
                                                     name="confirmPassword"
                                                     value={inputs.confirmPassword}
                                                     onChange={handleInput}
+                                                    autoComplete="off"
                                                 />
                                             </MdInputField>
                                         </Box>
