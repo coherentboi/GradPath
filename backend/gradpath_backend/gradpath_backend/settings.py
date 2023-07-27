@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-fei110o23$ubsvf0v&q2b_z%)!uw-a2ja8+wfk4(20&6kzneji
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -40,8 +38,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'knox',
-    'registration_form',
+
     'authentication',
+    'calendly',
+    'registration_form',
 ]
 
 REST_FRAMEWORK = {
@@ -87,7 +87,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gradpath_backend.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -97,7 +96,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -117,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -129,7 +126,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -139,3 +135,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CALENDLY_ORGANIZATION = 'https://api.calendly.com/organizations/9fb64151-a457-43ab-90d8-0ee219f0f576'
+CALENDLY_API_TOKEN = 'eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNjkwNDgzMjg2LCJqdGkiOiJhOTI2NDBiNi0yYzVjLTQ5Y2EtYWJjOC02ZmEwZWRmMDE3OTUiLCJ1c2VyX3V1aWQiOiJkN2JhMTc3YS1iNWFlLTQzMzQtOGI3ZS01OGUyZWNjMDQ3N2UifQ.xFozhT1G1Jw0nxGjKay2eN91HciajgUiI3eOEg5jx5Y1yyOqHbEGWKX2geilgrn0zlQTmX4rWUAwGcQ7MPsOEA'
