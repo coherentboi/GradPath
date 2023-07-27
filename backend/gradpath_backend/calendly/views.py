@@ -7,9 +7,10 @@ from gradpath_backend.settings import CALENDLY_API_TOKEN, CALENDLY_ORGANIZATION
 
 
 class CalendlyEventsView(APIView):
-    calendly_api = f"https://api.calendly.com/scheduled_events/?organization={CALENDLY_ORGANIZATION}"
-    count = 100
     permission_classes = [IsAuthenticated]
+    CALENDLY_API_HEADERS = {
+        'Authorization': f'Bearer {CALENDLY_API_TOKEN}',
+    }
 
     def get(self, request):
         active_events = self.get_active_events()
@@ -20,20 +21,21 @@ class CalendlyEventsView(APIView):
         page_token = None
         active_events = []
         current_time = datetime.now(timezone.utc)
-        headers = {
-            'Authorization': f'Bearer {CALENDLY_API_TOKEN}',
-        }
 
         while True:
-            params = {"count": self.count}
+            params = {"count": 100}
             if page_token:
                 params["page_token"] = page_token
 
-            response = requests.get(self.calendly_api, headers=headers, params=params)
+            response = requests.get(f"https://api.calendly.com/scheduled_events/?organization={CALENDLY_ORGANIZATION}",
+                                    headers=self.CALENDLY_API_HEADERS, params=params)
             data = response.json()
 
             for event in data['collection']:
                 event_end_time = datetime.fromisoformat(event['end_time'].replace("Z", "+00:00"))
+
+                tutor_response = requests.get(event["event_memberships"][0]["user"], headers=self.CALENDLY_API_HEADERS)
+                tutor_data = tutor_response.json()
 
                 if event_end_time > current_time:
                     active_events.append(
@@ -41,7 +43,8 @@ class CalendlyEventsView(APIView):
                             "start_time": event['start_time'],
                             "end_time": event["end_time"],
                             "uri": event['uri'],
-                            "tutor": event["event_memberships"][0]["user_email"],
+                            "tutor_name": tutor_data["resource"]["name"],
+                            "tutor_email": tutor_data["resource"]["email"],
                             "google_meet_link": event["location"]["join_url"]
                         })
 
@@ -54,12 +57,10 @@ class CalendlyEventsView(APIView):
 
     def get_active_events_for_current_user(self, active_events):
         events = []
-        headers = {
-            'Authorization': f'Bearer {CALENDLY_API_TOKEN}',
-        }
 
         for event in active_events:
-            response = requests.get(f"{event['uri']}/invitees", headers=headers, params={"count": 100})
+            response = requests.get(f"{event['uri']}/invitees", headers=self.CALENDLY_API_HEADERS,
+                                    params={"count": 100})
             data = response.json()
             for invitee in data["collection"]:
                 if invitee["email"] == self.request.user.email:
