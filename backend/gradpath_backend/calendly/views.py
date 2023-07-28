@@ -40,6 +40,7 @@ class CalendlyEventsView(APIView):
                 if event_end_time > current_time:
                     active_events.append(
                         {
+                            "name": event['name'],
                             "start_time": event['start_time'],
                             "end_time": event["end_time"],
                             "uri": event['uri'],

@@ -8,16 +8,19 @@ from rest_framework.exceptions import ValidationError
 from authentication.models import authenticate_user, Profile
 
 
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ('name', 'school', 'high_school_graduation_year')
+
+
 class UserSerializer(serializers.ModelSerializer):
-    has_paid = serializers.SerializerMethodField()
+    profile = ProfileSerializer()  # Include the profile serializer
 
     class Meta:
         model = User
-        fields = ("id", "username", "email", "has_paid")
-        read_only_fields = ("id", "username", "email")
-
-    def get_has_paid(self, obj):
-        return Profile.objects.get(user=obj).has_paid
+        fields = ("id", "username", "email", "profile")  # Include profile in fields
+        read_only_fields = ("id", "username", "email", "profile")
 
 
 def validate_username(value):
@@ -26,19 +29,36 @@ def validate_username(value):
 
 
 class RegisterSerializer(serializers.ModelSerializer):
+    profile = ProfileSerializer()
+
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password')
+        fields = ('id', 'username', 'email', 'password', 'profile')
         extra_kwargs = {
             'username': {'validators': [validators.UniqueValidator(queryset=User.objects.all()), validate_username]},
             'email': {'validators': [validators.UniqueValidator(queryset=User.objects.all())]},
             'password': {'write_only': True, 'validators': [validate_password]},
         }
 
+    def validate(self, attrs):
+        profile = attrs.get('profile')
+        if not profile:
+            raise serializers.ValidationError('Profile information must be provided.')
+
+        # Validate profile data separately
+        profile_serializer = ProfileSerializer(data=profile)
+        if not profile_serializer.is_valid():
+            raise serializers.ValidationError(profile_serializer.errors)
+
+        return attrs
+
     def create(self, validated_data):
-        return User.objects.create_user(username=validated_data["username"],
+        profile_data = validated_data.pop('profile')
+        user = User.objects.create_user(username=validated_data["username"],
                                         email=validated_data["email"],
                                         password=validated_data["password"])
+        Profile.objects.create(user=user, **profile_data)
+        return user
 
 
 class LoginSerializer(serializers.Serializer):

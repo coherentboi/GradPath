@@ -7,6 +7,9 @@ from rest_framework.exceptions import ValidationError
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     has_paid = models.BooleanField(default=False)
+    name = models.CharField(max_length=255)
+    school = models.CharField(max_length=255)
+    high_school_graduation_year = models.IntegerField()
 
     def __str__(self):
         return self.user.username
