@@ -8,8 +8,8 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     has_paid = models.BooleanField(default=False)
     name = models.CharField(max_length=255)
-    school = models.CharField(max_length=255)
-    high_school_graduation_year = models.IntegerField()
+    school = models.CharField(max_length=255, blank=True, null=True)
+    high_school_graduation_year = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.user.username
