@@ -17,3 +17,6 @@ export const register = (inputs) => API.post('/auth/register/', inputs)
 
 //Registration Form
 export const submit_registration_form = (inputs) =>  API.post('/registration-form/', inputs);
+
+//Tutoring
+export const get_calendly_events = () => API.get('/calendly/calendly_events/');

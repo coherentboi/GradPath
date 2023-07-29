@@ -25,7 +25,7 @@ import {logout} from "../../actions/auth";
 
 
 const pages = ['Programs', 'About'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Dashboard', 'Account', 'Logout'];
 
 const Navbar = ({navColour}) => {
 
@@ -72,6 +72,7 @@ const Navbar = ({navColour}) => {
         switch (page.toLowerCase()) {
             case "logout":
                 dispatch(logout()).then(r => {
+                    navigate('/auth');
                     window.location.reload();
                 })
                 break;
@@ -87,7 +88,7 @@ const Navbar = ({navColour}) => {
     }
 
     return(
-        <AppBar color={navColour} elevation={navColour === "background" ? 0 : 16} sx={{borderRadius: "5px", transition: "0.3s", display: "flex", width: "100%"}} position="sticky">
+        <AppBar color={navColour} elevation={navColour === "background" ? 0 : 16} sx={{borderRadius: "5px", transition: "0.3s", display: "flex"}} position="sticky">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -100,7 +101,6 @@ const Navbar = ({navColour}) => {
                             display: { xs: 'none', md: 'flex' },
                             fontFamily: 'monospace',
                             fontWeight: 700,
-                            letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
                             alignItems: "center"
@@ -109,7 +109,7 @@ const Navbar = ({navColour}) => {
                         <img src={GradpathLogo} alt="logo" style={{ display: { xs: 'none', md: 'flex' }, height: "40px"}} />
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ width: {xs: "100px"}, flexGrow: {md: 1}, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -151,7 +151,6 @@ const Navbar = ({navColour}) => {
                         component="a"
                         href=""
                         sx={{
-                            mr: 2,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             fontFamily: 'monospace',
@@ -161,9 +160,12 @@ const Navbar = ({navColour}) => {
                             textDecoration: 'none',
                             transform: '0.3s',
                             alignItems: "center",
+                            justifyContent: "center",
+                            marginLeft: "auto",
+                            marginright: "auto"
                         }}
                     >
-                        <img src={GradpathLogo} alt="logo" style={{ display: { xs: 'flex', md: 'none' }, height: "40px"}} />
+                        <img src={GradpathLogo} alt="logo" style={{ display: { xs: 'flex', md: 'none' }, height: "40px", alignSelf: "center", justifySelf: "center"}} />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex'}, alignItems: "center" }}>
                         {pages.map((page) => (
@@ -179,7 +181,7 @@ const Navbar = ({navColour}) => {
                     </Box>
 
                     {user && (
-                        <Box sx={{ flexGrow: 0 }}>
+                        <Box sx={{width: {xs: "100px"}, display: "flex", flexGrow: {md: 1}, flexDirection: "row", alignItems: "center", justifyContent: "flex-end"}}>
                             <Tooltip title="Open settings">
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                     <Avatar sx={{backgroundColor: navColour === "primary" ? "background.main" : "primary.main", color: navColour === "primary" ? "primary.main" : "background.main"}} alt={user.user.username}>{user.user.username.charAt(0)}</Avatar>
@@ -210,7 +212,7 @@ const Navbar = ({navColour}) => {
                         </Box>
                     )}
                     {!user && (
-                        <Box sx={{flexGrow: 0}}>
+                        <Box sx={{width: {xs: "100px"}, display: "flex", flexGrow: {md: 1}, flexDirection: "row", alignItems: "center", justifyContent: "flex-end"}}>
                             <Button
                                 onClick={login}
                                 color="inherit"
