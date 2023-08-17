@@ -21,5 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('registration_form.urls')),
     path('auth/', include('authentication.urls')),
-    path('calendly/', include('calendly.urls')),
 ]

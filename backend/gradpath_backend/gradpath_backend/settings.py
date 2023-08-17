@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
+
+from dynaconf.vendor.dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +28,31 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+load_dotenv()
+
+db_engine = os.getenv('DB_ENGINE')
+
+if db_engine == 'mysql':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.getenv('MYSQL_DB_NAME'),
+            'USER': os.getenv('MYSQL_USER'),
+            'PASSWORD': os.getenv('MYSQL_PASSWORD'),
+            'HOST': os.getenv('MYSQL_HOST'),
+            'PORT': os.getenv('MYSQL_PORT'),
+        }
+    }
+elif db_engine == 'sqlite':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    raise ValueError('Invalid DB_ENGINE value in .env file. It must be either "mysql" or "sqlite".')
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,7 +67,6 @@ INSTALLED_APPS = [
     'knox',
 
     'authentication',
-    'calendly',
     'registration_form',
 ]
 
@@ -87,16 +113,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gradpath_backend.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -136,5 +152,3 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CALENDLY_ORGANIZATION = 'https://api.calendly.com/organizations/9fb64151-a457-43ab-90d8-0ee219f0f576'
-CALENDLY_API_TOKEN = 'eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNjkwNDgzMjg2LCJqdGkiOiJhOTI2NDBiNi0yYzVjLTQ5Y2EtYWJjOC02ZmEwZWRmMDE3OTUiLCJ1c2VyX3V1aWQiOiJkN2JhMTc3YS1iNWFlLTQzMzQtOGI3ZS01OGUyZWNjMDQ3N2UifQ.xFozhT1G1Jw0nxGjKay2eN91HciajgUiI3eOEg5jx5Y1yyOqHbEGWKX2geilgrn0zlQTmX4rWUAwGcQ7MPsOEA'
