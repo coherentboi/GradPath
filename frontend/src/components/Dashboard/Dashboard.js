@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 
-import {Avatar, Box, Button, Grid, Paper, styled, Typography} from "@mui/material";
+import {Avatar, Box, Button, Grid, styled, Typography} from "@mui/material";
 
 import {get_calendly_events} from "../../actions/tutoring";
 
@@ -78,7 +78,7 @@ const Dashboard = ({setNavColour}) => {
                                         <Typography sx={{fontWeight: "700", fontFamily: "Open Sans, sans-serif", fontSize: "32px"}}>{user.user.profile.name}</Typography>
                                         <Typography sx={{fontFamily: "Open Sans, sans-serif", fontSize: "16px"}}>@{user.user.username}</Typography>
                                         <Typography sx={{fontFamily: "Open Sans, sans-serif", fontSize: "24px", marginTop: "10px"}}>{user.user.profile.school}, {user.user.profile.high_school_graduation_year}</Typography>
-                                        <Button sx={{marginTop: "5px", backgroundColor: "secondary.main", width: "150px", color: "black"}}>
+                                        <Button sx={{marginTop: "5px", backgroundColor: "secondary.main", width: "150px", color: "black", ":hover":{backgroundColor: "secondary.main", filter: "brightness(75%)"}}}>
                                             Edit Profile
                                         </Button>
                                     </Box>
@@ -110,13 +110,25 @@ const Dashboard = ({setNavColour}) => {
                             <DashboardBox sx={{height: "10%", width: "100%", alignItems: "flex-start"}}>
                                 <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", width: "calc(100% - 10px)", height: "calc(10% - 10px)", margin: "auto"}}>
                                     <Typography sx={{fontFamily: "Open Sans, sans-serif", fontWeight: "700", fontSize: "32px", display: "flex", flexGrow: 1}}>Upcoming Sessions</Typography>
-                                    <Button onClick={handleOpen} sx={{fontSize: "16px", fontFamily: "Open Sans, sans-serif", padding: "10px 15px", backgroundColor: "primary.main", color: "white", ":hover":{color: "primary.main", transition: "0.3s"}}}>
+                                    <Button onClick={handleOpen} sx={{fontSize: "16px", fontFamily: "Open Sans, sans-serif", padding: "10px 15px", backgroundColor: "primary.main", color: "white", ":hover":{backgroundColor: "primary.main", filter: "brightness(75%)", transition: "0.3s"}}}>
                                         Book Now!
                                     </Button>
                                 </Box>
                             </DashboardBox>
                             <DashboardBox sx={{height: "90%", width: "100%", alignItems: "flex-start"}}>
                                 <Box sx={{display: "block", flexDirection: "column", alignItems: "center", width: "calc(100% - 10px)", height: "calc(100% - 10px)", margin: "auto", overflowY: "auto"}}>
+                                    {
+                                        upcomingSessions.length === 0 && (
+                                            <Box sx={{display: "flex", width: "100%", height: "100%", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
+                                                <Typography sx={{fontFamily: "Open Sans, sans-serif", fontWeight: "500", fontSize: "16px", display: "flex"}}>
+                                                    It seems you don't have any upcoming tutoring sessions. Book one now!
+                                                </Typography>
+                                                <Button onClick={handleOpen} sx={{fontSize: "16px", fontFamily: "Open Sans, sans-serif", padding: "10px 15px", marginTop: "20px", backgroundColor: "primary.main", color: "white", ":hover":{backgroundColor: "primary.main", filter: "brightness(75%)", transition: "0.3s"}}}>
+                                                    Book Now!
+                                                </Button>
+                                            </Box>
+                                        )
+                                    }
                                     {
                                         upcomingSessions.map((details, index) => (
                                             <Meeting key={index} openAccordion={openAccordion} setOpenAccordion={setOpenAccordion} details={details} index={index}/>

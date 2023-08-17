@@ -322,7 +322,7 @@ const Registration = () => {
                     </Box>
                 </form>
                 <Box sx={{height: "10%", width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <Button color="primary" sx={{height: "100%", width: "100%", color: "white", backgroundColor: "primary.main", borderRadius: "0 0 3px 3px", transition: "0.3s",":hover":{color: "black"}}} type="submit" value="Submit">Submit</Button>
+                    <Button color="primary" sx={{height: "100%", width: "100%", color: "white", backgroundColor: "primary.main", borderRadius: "0 0 3px 3px", transition: "0.3s", ":hover":{backgroundColor: "primary.main", filter: "brightness(75%)"}}} type="submit" value="Submit">Submit</Button>
                 </Box>
             </Paper>
             <Box sx={{display: {xs: "none", md: "flex"}, flexDirection: "column", width: "20%", height: "100%"}}>

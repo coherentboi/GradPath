@@ -139,8 +139,8 @@ const Navbar = ({navColour}) => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography onClick={() => handlePage(page)} textAlign="center">{page}</Typography>
+                                <MenuItem key={page} onClick={handleCloseNavMenu} onClick={() => handlePage(page)}>
+                                    <Typography textAlign="center">{page}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -204,8 +204,8 @@ const Navbar = ({navColour}) => {
                                 onClose={handleCloseUserMenu}
                             >
                                 {settings.map((setting) => (
-                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                        <Typography onClick={() => handlePage(setting)} textAlign="center">{setting}</Typography>
+                                    <MenuItem key={setting} onClick={handleCloseUserMenu} onClick={() => handlePage(setting)}>
+                                        <Typography textAlign="center">{setting}</Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>

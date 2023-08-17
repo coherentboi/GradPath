@@ -62,19 +62,19 @@ const Home = ({setNavColour}) => {
                                 <Box sx={{width: "100%", display: "flex", flexDirection: "row"}}>
                                     {
                                         !user && (
-                                            <Button color="primary" onClick={() => {navigate("/auth")}} sx={{backgroundColor: "primary.main", transition: "0.3s", marginRight: "30px"}}>
-                                                <Typography sx={{fontSize: "18px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "background.main", padding: "15px 20px", transition: "0.3s", ":hover":{color: "primary.main"}}}>Register Now!</Typography>
+                                            <Button color="primary" onClick={() => {navigate("/auth")}} sx={{backgroundColor: "primary.main", transition: "0.3s", marginRight: "30px", ":hover": { backgroundColor: "primary.main", filter: "brightness(75%)"}}}>
+                                                <Typography sx={{fontSize: "18px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "background.main", padding: "15px 20px", transition: "0.3s"}}>Register Now!</Typography>
                                             </Button>
                                         )
                                     }
                                     {
                                         user && (
-                                            <Button color="primary" onClick={() => {navigate("/dashboard")}} sx={{backgroundColor: "primary.main", transition: "0.3s", marginRight: "30px"}}>
-                                                <Typography sx={{fontSize: "18px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "background.main", padding: "15px 20px", transition: "0.3s", ":hover":{color: "primary.main"}}}>Dashboard</Typography>
+                                            <Button color="primary" onClick={() => {navigate("/dashboard")}} sx={{backgroundColor: "primary.main", transition: "0.3s", marginRight: "30px", ":hover": { backgroundColor: "primary.main", filter: "brightness(75%)"}}}>
+                                                <Typography sx={{fontSize: "18px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "background.main", padding: "15px 20px", transition: "0.3s"}}>Dashboard</Typography>
                                             </Button>
                                         )
                                     }
-                                    <Button color="primary" sx={{backgroundColor: "secondary.main", transition: "0.3s"}}>
+                                    <Button color="secondary" onClick={() => {navigate("/about")}} sx={{backgroundColor: "secondary.main", transition: "0.3s", ":hover":{backgroundColor: "secondary.main", filter: "brightness(75%)"}}}>
                                         <Typography sx={{fontSize: "18px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "black", padding: "15px 20px", transition: "0.3s"}}>About Us!</Typography>
                                     </Button>
                                 </Box>
@@ -101,10 +101,10 @@ const Home = ({setNavColour}) => {
                                 Get access to tutoring from numerous Grade 11 and 12 IB students from your local IB school! All our tutors are hand-chosen and high achievers, with a 95%+ in all subjects they tutor.
                             </Typography>
                             <Box sx={{width: "100%", display: "flex", flexDirection: "row", justifyContent: "center"}}>
-                                <Button color="primary" onClick={() => {navigate("/auth")}} sx={{width: "calc(50% - 15px)", backgroundColor: "primary.main", transition: "0.3s", marginRight: "15px"}}>
+                                <Button color="primary" onClick={() => {navigate("/auth")}} sx={{width: "calc(50% - 15px)", backgroundColor: "primary.main", transition: "0.3s", marginRight: "15px", "hover":{backgroundColor: "primary.main", filter: "brightness(75%)"}}}>
                                     <Typography sx={{fontSize: "14px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "background.main", padding: "10px 10px", transition: "0.3s", ":hover":{color: "primary.main"}}}>Register Now!</Typography>
                                 </Button>
-                                <Button color="primary" sx={{width: "calc(50% - 15px)", backgroundColor: "secondary.main", transition: "0.3s", marginLeft: "15px"}}>
+                                <Button color="primary" sx={{width: "calc(50% - 15px)", backgroundColor: "secondary.main", transition: "0.3s", marginLeft: "15px", "hover":{backgroundColor: "primary.main", filter: "brightness(75%)"}}}>
                                     <Typography sx={{fontSize: "14px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "black", padding: "15px 20px", transition: "0.3s"}}>About Us!</Typography>
                                 </Button>
                             </Box>
@@ -136,7 +136,7 @@ const Home = ({setNavColour}) => {
                                                 Click below to learn more!
                                             </Typography>
                                         </Box>
-                                        <Button sx={{width: "100%", height: "15%", borderRadius: "0 0 46px 0", color: "white", backgroundColor: "primary.main", ":hover": {color: "black"}, transition: "0.3s"}}>
+                                        <Button sx={{width: "100%", height: "15%", borderRadius: "0 0 46px 0", color: "white", backgroundColor: "primary.main", ":hover": {backgroundColor: "primary.main", filter: "brightness(75%)"}, transition: "0.3s"}}>
                                             Learn More
                                         </Button>
                                     </Box>
@@ -160,7 +160,7 @@ const Home = ({setNavColour}) => {
                                                 Click below to learn more!
                                             </Typography>
                                         </Box>
-                                        <Button sx={{width: "100%", height: "15%", borderRadius: "0 0 46px 0", color: "white", backgroundColor: "primary.main", ":hover": {color: "black"}, transition: "0.3s"}}>
+                                        <Button sx={{width: "100%", height: "15%", borderRadius: "0 0 46px 0", color: "white", backgroundColor: "primary.main", ":hover": {backgroundColor: "primary.main", filter: "brightness(75%)"}, transition: "0.3s"}}>
                                             Learn More
                                         </Button>
                                     </Box>
@@ -199,7 +199,7 @@ const Home = ({setNavColour}) => {
                                     </ul>
                                 </Typography>
                                 <Box sx={{width: "100%", display: "flex", flexDirection: "row"}}>
-                                    <Button color="secondary" sx={{backgroundColor: "secondary.main", transition: "0.3s", marginRight: "30px"}}>
+                                    <Button color="secondary" sx={{backgroundColor: "secondary.main", transition: "0.3s", marginRight: "30px", ":hover": {backgroundColor: "secondary.main", filter: "brightness(75%)"}}}>
                                         <Typography sx={{fontSize: "18px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "black", padding: "15px 20px", transition: "0.3s"}}>View Programs</Typography>
                                     </Button>
                                 </Box>
@@ -250,8 +250,8 @@ const Home = ({setNavColour}) => {
                                 All subject material is taken directly from real IB classes at your local IB school. Rest assured you will be in good hands with all the necessary resources available within seconds.
                             </Typography>
                             <Box sx={{width: "100%", display: "flex", flexDirection: "row", justifyContent: "center"}}>
-                                <Button color="secondary" sx={{width: "75%", backgroundColor: "secondary.main", transition: "0.3s"}}>
-                                    <Typography sx={{fontSize: "14px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "black", padding: "15px 20px", transition: "0.3s"}}>View Programs</Typography>
+                                <Button color="secondary" sx={{width: "75%", backgroundColor: "secondary.main", transition: "0.3s", ":hover": {backgroundColor: "secondary.main", filter: "brightness(75%)"}}}>
+                                    <Typography sx={{fontSize: "14px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "black", padding: "15px 20px", transition: "0.3s", }}>View Programs</Typography>
                                 </Button>
                             </Box>
                         </Box>

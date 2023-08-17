@@ -24,7 +24,6 @@ const Book = ({user, open, setOpen}) => {
         });
     }).flat();
 
-
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleChoice = (item) => {
