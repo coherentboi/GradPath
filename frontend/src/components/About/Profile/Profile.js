@@ -35,7 +35,7 @@ const Profile = ({details}) => {
                 <img
                     alt={details.name}
                     src={details.image}
-                    style={{height: "100%", width: "100%", objectFit: "cover", borderRadius: "4px"}}
+                    style={{minHeight: "100%", width: "100%", objectFit: "cover", borderRadius: "4px"}}
                 />
                 <Box
                     sx={{

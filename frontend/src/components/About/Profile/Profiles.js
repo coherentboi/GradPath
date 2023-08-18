@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import {alpha, Box, Button} from "@mui/material";
 import Profile from "./Profile";
 
-import { TutorDetails } from "./TutorDetails";
+import { TutorDetails } from "../../../constants/TutorDetails";
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';

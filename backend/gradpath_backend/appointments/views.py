@@ -1,3 +1,6 @@
+from datetime import datetime
+
+import pytz
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from requests.auth import HTTPBasicAuth
@@ -37,9 +40,17 @@ class AppointmentsView(APIView):
         customer_appointments_data = [appointment for appointment in all_appointments_data if
                                       appointment['customerId'] == customer_id]
 
+        # Current date and time in Toronto timezone
+        toronto_tz = pytz.timezone('America/Toronto')
+        current_date_time = datetime.now(toronto_tz)
+
+        # Filter for appointments whose end dates haven't passed yet
+        valid_appointments_data = [appointment for appointment in customer_appointments_data if
+                                   datetime.strptime(appointment['end'], '%Y-%m-%d %H:%M:%S').replace(tzinfo=toronto_tz) >= current_date_time]
+
         # Transform the appointments with provider and service details
         transformed_appointments = []
-        for appointment in customer_appointments_data:
+        for appointment in valid_appointments_data:
             provider_url = f"{settings.EA_URL}api/v1/providers/{appointment['providerId']}"
             provider_response = requests.get(provider_url, auth=auth)
             provider_data = provider_response.json()
