@@ -6,3 +6,4 @@ django-rest-knox
 python-dotenv
 dynaconf
 mysqlclient==2.2.0
+requests
