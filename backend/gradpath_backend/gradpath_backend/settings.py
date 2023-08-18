@@ -24,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fei110o23$ubsvf0v&q2b_z%)!uw-a2ja8+wfk4(20&6kzneji'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     '3.144.111.173',
 ]
 
@@ -68,6 +69,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
 
+    'appointments',
     'authentication',
     'registration_form',
 ]
@@ -155,3 +157,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+EA_URL = 'http://3.144.111.173/easyappointments/index.php/'
+EA_ADMIN_USER = '876pol'
+EA_ADMIN_PASS = 'hqRJ7J-cHmT8Ggu'
