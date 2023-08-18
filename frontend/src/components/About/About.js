@@ -16,7 +16,7 @@ import stressImage from "../../images/about_page_stress.png";
 import Profiles from "./Profile/Profiles";
 
 //Tutor Details
-import { TutorDetails } from "./Profile/TutorDetails";
+import { TutorDetails } from "../../constants/TutorDetails";
 
 const HalfBox = styled(Box)({
     width: "50%",

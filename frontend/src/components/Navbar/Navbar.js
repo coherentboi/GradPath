@@ -25,7 +25,7 @@ import {logout} from "../../actions/auth";
 
 
 const pages = ['Programs', 'About'];
-const settings = ['Dashboard', 'Account', 'Logout'];
+const settings = ['Dashboard', 'Logout'];
 
 const Navbar = ({navColour}) => {
 
