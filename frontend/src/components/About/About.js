@@ -9,10 +9,12 @@ import {Box, Button, Grid, styled, Typography} from "@mui/material";
 import { FullPage, Slide } from 'react-full-page';
 
 //Image Import
-import tutoringImage from "../../images/home_page1_tutoring.png";
+import logo from "../../images/gradpathlogo.svg";
+import graduationImage from "../../images/about_page1.jpg";
 import dropoutImage from "../../images/about_page_dropout.png";
 import failImage from "../../images/about_page_fail.png";
 import stressImage from "../../images/about_page_stress.png";
+
 import Profiles from "./Profile/Profiles";
 
 //Tutor Details
@@ -63,7 +65,7 @@ const Home = ({setNavColour}) => {
                         </HalfBox>
                         <HalfBox>
                             <Box sx={{display: "flex", width: "calc(90% - 20px)", height: "100%", marginLeft: "20px", marginRight: "20px", alignItems: "center"}}>
-                                <img src={tutoringImage} alt="" style={{objectFit: "cover", width: "100%", height: "65%", borderRadius: "20px"}}/>
+                                <img src={graduationImage} alt="logo" style={{objectFit: "cover", minWidth: "100%", borderRadius: "20px"}}/>
                             </Box>
                         </HalfBox>
                     </Box>
@@ -75,7 +77,7 @@ const Home = ({setNavColour}) => {
                         <Box sx={{display: "flex", width: "calc(96% + 10px)", height: "60%", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
                             <Box sx={{display: "flex", width: "25%", height: "100%", margin: "auto", flexDirection: "column", alignItems: "center"}}>
                                 <Box sx={{display: "flex", aspectRatio: "1", width: "80%", margin: "auto", borderRadius: "50%"}}>
-                                    <img src={dropoutImage} style={{width: "100%", height: "100%", aspectRatio: 1, borderRadius: "50%", objectFit: "cover"}} alt="Dropout"/>
+                                    <img src={dropoutImage} style={{width: "100%", height: "100%", aspectRatio: 1, borderRadius: "50%", objectFit: "contain"}} alt="Dropout"/>
                                 </Box>
                                 <Box sx={{display: "flex", width: "100%", flexGrow: 1, alignItems: "center", justifyContent: "center", textAlign: "center"}}>
                                     <Typography sx={{fontSize: "16px", fontFamily: "Open Sans, sans-serif"}}>7 out of 15 students drop out of IB within the first year.</Typography>
@@ -91,7 +93,7 @@ const Home = ({setNavColour}) => {
                             </Box>
                             <Box sx={{display: "flex", width: "25%", height: "100%", margin: "auto", flexDirection: "column", alignItems: "center"}}>
                                 <Box sx={{display: "flex", aspectRatio: "1", width: "80%", margin: "auto", borderRadius: "50%", alignItems: "center", justifyContent: "center"}}>
-                                    <img src={stressImage} style={{width: "80%", height: "80%", aspectRatio: 1, borderRadius: "50%", objectFit: "cover"}} alt="Stress"/>
+                                    <img src={stressImage} style={{width: "100%", height: "100%", aspectRatio: 1, borderRadius: "50%", objectFit: "cover"}} alt="Stress"/>
                                 </Box>
                                 <Box sx={{display: "flex", width: "100%", flexGrow: 1, alignItems: "center", justifyContent: "center", textAlign: "center"}}>
                                     <Typography sx={{fontSize: "16px", fontFamily: "Open Sans, sans-serif"}}>In a recent survey, over 50% of IB students reported feeling stressed daily.</Typography>

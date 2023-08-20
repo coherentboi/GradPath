@@ -199,7 +199,7 @@ const Home = ({setNavColour}) => {
                                     </ul>
                                 </Typography>
                                 <Box sx={{width: "100%", display: "flex", flexDirection: "row"}}>
-                                    <Button color="secondary" sx={{backgroundColor: "secondary.main", transition: "0.3s", marginRight: "30px", ":hover": {backgroundColor: "secondary.main", filter: "brightness(75%)"}}}>
+                                    <Button onClick={() => navigate("/programs")} color="secondary" sx={{backgroundColor: "secondary.main", transition: "0.3s", marginRight: "30px", ":hover": {backgroundColor: "secondary.main", filter: "brightness(75%)"}}}>
                                         <Typography sx={{fontSize: "18px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "black", padding: "15px 20px", transition: "0.3s"}}>View Programs</Typography>
                                     </Button>
                                 </Box>
@@ -250,7 +250,7 @@ const Home = ({setNavColour}) => {
                                 All subject material is taken directly from real IB classes at your local IB school. Rest assured you will be in good hands with all the necessary resources available within seconds.
                             </Typography>
                             <Box sx={{width: "100%", display: "flex", flexDirection: "row", justifyContent: "center"}}>
-                                <Button color="secondary" sx={{width: "75%", backgroundColor: "secondary.main", transition: "0.3s", ":hover": {backgroundColor: "secondary.main", filter: "brightness(75%)"}}}>
+                                <Button onClick={() => navigate("/programs")} color="secondary" sx={{width: "75%", backgroundColor: "secondary.main", transition: "0.3s", ":hover": {backgroundColor: "secondary.main", filter: "brightness(75%)"}}}>
                                     <Typography sx={{fontSize: "14px", fontFamily: 'Open Sans, sans-serif', fontWeight: "500", color: "black", padding: "15px 20px", transition: "0.3s", }}>View Programs</Typography>
                                 </Button>
                             </Box>

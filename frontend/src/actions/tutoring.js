@@ -1,13 +1,13 @@
 import * as api from "../api/index";
-import {CALENDLYEVENTS} from "../constants/actionTypes";
+import {EASYAPPOINTMENTS} from "../constants/actionTypes";
 
-export const get_calendly_events = () => async(dispatch) => {
+export const get_easyappointments = () => async(dispatch) => {
     try{
-        const { data } = await api.get_calendly_events();
+        const { data } = await api.get_easyappointments();
 
         console.log(data);
 
-        dispatch({type: CALENDLYEVENTS, data});
+        dispatch({type: EASYAPPOINTMENTS, data});
     }
     catch(error){
         console.log(error);

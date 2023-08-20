@@ -38,8 +38,8 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 const Meeting = ({openAccordion, setOpenAccordion, details, index}) => {
 
-    const start = new Date(details.start_time);
-    const end = new Date(details.end_time);
+    const start = new Date(details.start);
+    const end = new Date(details.end);
 
     const startTime = start.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
     const endTime = end.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
@@ -61,10 +61,10 @@ const Meeting = ({openAccordion, setOpenAccordion, details, index}) => {
                 <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", width: "100%", height: "80px", backgroundColor: "primary.main", borderRadius: openAccordion === index ? "4px 4px 0 0" : "4px 4px 4px 4px"}}>
                     <Box sx={{display: "flex", width: "45%", height: "100%", alignItems: "center"}}>
                         <Typography sx={{color: "background.main", fontWeight: "700", marginLeft: "20px", fontFamily: "Open Sans, sans-serif", fontSize: "18px"}}>
-                            {details.name}
+                            {details.serviceName}
                         </Typography>
                         <Typography sx={{color: "background.main", marginLeft: "20px", fontFamily: "Open Sans, sans-serif", fontSize: "18px"}}>
-                            {details.tutor_name}
+                            {details.providerName}
                         </Typography>
                     </Box>
                     <Box sx={{display: "flex", width: "55%", height: "100%", alignItems: "center", justifyContent: "flex-end"}}>
@@ -89,7 +89,7 @@ const Meeting = ({openAccordion, setOpenAccordion, details, index}) => {
             <AccordionDetails sx={{borderRadius: "0"}}>
                 <Box sx={{display: "flex", flexDirection: "column", width: "100%", height: "120px", backgroundColor: "background.dark", borderRadius: "0px 0px 4px 4px"}}>
                     <Typography sx={{fontSize: "16px", fontFamily: "Open Sans, sans-serif", marginLeft: "15px", marginTop: "10px"}}>
-                        <b>Tutor Email:</b> {details.tutor_email}
+                        <b>Tutor Email:</b> {details.providerEmail}
                     </Typography>
                     <Box sx={{display: "flex", flexDirection: "row", margin: "10px 5px 10px 5px", flexGrow: "1"}}>
                         <a style={{width: "31%", height: "100%", marginRight: "auto", marginLeft: "auto",}} href={details.google_meet_link} target="_blank" rel="noopener noreferrer">
@@ -97,12 +97,12 @@ const Meeting = ({openAccordion, setOpenAccordion, details, index}) => {
                                 Join Session
                             </Button>
                         </a>
-                        <a style={{width: "31%", height: "100%", marginRight: "auto", marginLeft: "auto",}} href={details.reschedule_url} target="_blank" rel="noopener noreferrer">
+                        <a style={{width: "31%", height: "100%", marginRight: "auto", marginLeft: "auto",}} href={process.env.REACT_APP_EASYAPPOINTMENTS + "index.php/appointments/index/" + details.hash} target="_blank" rel="noopener noreferrer">
                             <Button sx={{width: "100%", height: "100%", fontFamily: "Open Sans, sans-serif", fontWeight: "500", fontSize: "16px", backgroundColor: "primary.main", color: "white", ":hover": {color: "black"}}}>
                                 Reschedule Session
                             </Button>
                         </a>
-                        <a style={{width: "31%", height: "100%", marginRight: "auto", marginLeft: "auto",}} href={details.cancel_url} target="_blank" rel="noopener noreferrer">
+                        <a style={{width: "31%", height: "100%", marginRight: "auto", marginLeft: "auto",}} href={process.env.REACT_APP_EASYAPPOINTMENTS + "index.php/appointments/index/" + details.hash} target="_blank" rel="noopener noreferrer">
                             <Button sx={{width: "100%", height: "100%", fontFamily: "Open Sans, sans-serif", fontWeight: "500", fontSize: "16px", backgroundColor: "red", color: "white", ":hover": {color: "black"}}}>
                                 Cancel Session
                             </Button>

@@ -1,5 +1,5 @@
 //React Imports
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 
 //MUI Material Imports
@@ -20,19 +20,25 @@ import {
 //Icon Imports
 import MenuIcon from '@mui/icons-material/Menu';
 import GradpathLogo from '../../images/gradpathlogo.svg';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../../actions/auth";
 
 
 const pages = ['Programs', 'About'];
-const settings = ['Dashboard', 'Logout'];
+const settings = ['Dashboard', 'Account', 'Logout'];
 
 const Navbar = ({navColour}) => {
 
     //User
-    const [user] = useState(JSON.parse(localStorage.getItem('profile')));
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')) !== null ? JSON.parse(localStorage.getItem('profile')).user : JSON.parse(localStorage.getItem('profile')));
 
-    console.log(user);
+    const userDetails = useSelector(state => state.user);
+
+    useEffect(() => {
+        if(user && userDetails.username !== undefined){
+            setUser(userDetails);
+        }
+    }, [userDetails])
 
     const dispatch = useDispatch();
 
@@ -95,7 +101,7 @@ const Navbar = ({navColour}) => {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="/"
+                        onClick={() => navigate("/")}
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -149,7 +155,7 @@ const Navbar = ({navColour}) => {
                         variant="h5"
                         noWrap
                         component="a"
-                        href=""
+                        onClick={() => navigate("/")}
                         sx={{
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
@@ -184,7 +190,7 @@ const Navbar = ({navColour}) => {
                         <Box sx={{width: {xs: "100px"}, display: "flex", flexGrow: {md: 1}, flexDirection: "row", alignItems: "center", justifyContent: "flex-end"}}>
                             <Tooltip title="Open settings">
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                    <Avatar sx={{backgroundColor: navColour === "primary" ? "background.main" : "primary.main", color: navColour === "primary" ? "primary.main" : "background.main"}} alt={user.user.username}>{user.user.username.charAt(0)}</Avatar>
+                                    <Avatar sx={{backgroundColor: navColour === "primary" ? "background.main" : "primary.main", color: navColour === "primary" ? "primary.main" : "background.main"}} alt={user.username}>{user.username.charAt(0)}</Avatar>
                                 </IconButton>
                             </Tooltip>
                             <Menu

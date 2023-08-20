@@ -13,7 +13,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 
 //Image Imports
 import Panel1 from "../../../images/home_page4_panel_1.png"
-import Panel2 from "../../../images/home_page4_panel_2.png"
+import Panel2 from "../../../images/auth_tutoring.png"
 
 const MdInputField = styled('div')({
     width: "90%",
@@ -117,10 +117,10 @@ const Registration = () => {
                 <form style={{display: "flex", flexDirection: "column", width: "95%", height: "90%", alignItems: "center", justifyContent: "center", marginTop: "30px"}} onSubmit={handleSubmit}>
                     <Box sx={{display: {xs: "none", md: "flex"}, flexDirection: "column", width: "100%", height: "100%", alignItems: "center", justifyContent: "center"}}>
                         <Typography sx={{fontSize: "40px",fontFamily: 'Open Sans, sans-serif', fontWeight: "700", marginBottom: "20px"}}>
-                            Interest Form
+                            Questions?
                         </Typography>
                         <Typography align="center" sx={{fontSize: "16px",fontFamily: 'Open Sans, sans-serif', fontWeight: "400", marginBottom: "20px"}}>
-                            If you are interested in our program, please fill in this interest form. We'll contact you with details shortly.
+                            If you are interested in our program but have some questions, please fill in this form. We'll contact you with details shortly.
                         </Typography>
                         <Box sx={{display: "flex", flexDirection: "row", width: "100%", height: "70%", marginBottom: "10px", alignItems: "center", justifyContent: "center"}}>
                             <HalfBox>
@@ -207,7 +207,7 @@ const Registration = () => {
                                     />
                                 </MdInputField>
                                 <MdInputField>
-                                    <MdLabel htmlFor="comments">Comments:</MdLabel>
+                                    <MdLabel htmlFor="comments">Question:</MdLabel>
                                     <MdStyledInput
                                         type="text"
                                         name="comments"

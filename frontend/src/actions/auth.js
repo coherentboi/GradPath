@@ -1,5 +1,5 @@
 import * as api from '../api/index';
-import {LOGIN, LOGOUT} from "../constants/actionTypes";
+import {GETUSER, LOGIN, LOGOUT} from "../constants/actionTypes";
 
 export const login = (inputs) => async(dispatch) => {
     try{
@@ -37,5 +37,33 @@ export const register = (inputs) => async(dispatch) => {
         console.log(error);
 
         return error.response.data;
+    }
+}
+
+export const getuser = () => async(dispatch) => {
+    try{
+        const { data } = await api.getuser();
+
+        console.log(data);
+
+        dispatch({type: GETUSER, data})
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+export const editprofile = (inputs) => async(dispatch) => {
+    try{
+        await api.editprofile(inputs);
+
+        getuser();
+
+        return "Success!";
+    }
+    catch(error){
+        console.log(error);
+
+        return error.response.data.error;
     }
 }

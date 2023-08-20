@@ -17,6 +17,7 @@ import {Box, createTheme, ThemeProvider} from "@mui/material";
 
 //Import CSS
 import './App.css';
+import Account from "./components/Account/Account";
 
 
 const palette = createTheme({
@@ -55,6 +56,7 @@ const App = () => {
                             <Route path="*" element={<NotFound setNavColour={setNavColour}/>}/>
                             <Route path="/" element={<Home setNavColour={setNavColour}/>}/>
                             <Route path="/about" element={<About setNavColour={setNavColour}/>}/>
+                            <Route path="/account" element={<Account setNavColour={setNavColour}/>}/>
                             <Route path="/auth" element={<Auth setNavColour={setNavColour}/>}/>
                             <Route path="/dashboard" element={<Dashboard setNavColour={setNavColour}/>}/>
                         </Routes>
