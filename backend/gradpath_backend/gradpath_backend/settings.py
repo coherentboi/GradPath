@@ -31,7 +31,7 @@ ALLOWED_HOSTS = [
     'gradpathtutoring.com',
     'localhost',
     '127.0.0.1',
-    '3.144.111.173',
+    '18.190.19.254',
 ]
 
 load_dotenv(dotenv_path=BASE_DIR / '.env')
