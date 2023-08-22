@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d164ef8d.css",
-    "main.js": "/static/js/main.928290eb.js",
+    "main.js": "/static/js/main.8d60ace6.js",
     "static/media/home_page1_tutoring.png": "/static/media/home_page1_tutoring.27ac662f45e642512a02.png",
     "static/media/auth_tutoring.png": "/static/media/auth_tutoring.df3ed4a92344e37205d3.png",
     "static/media/BranavanJegatheeswaran.png": "/static/media/BranavanJegatheeswaran.d87bd1e671a9161564e7.png",
@@ -21,10 +21,10 @@
     "static/media/gradpathlogo.svg": "/static/media/gradpathlogo.393ef27260ca46450230b7c4b9508f7c.svg",
     "index.html": "/index.html",
     "main.d164ef8d.css.map": "/static/css/main.d164ef8d.css.map",
-    "main.928290eb.js.map": "/static/js/main.928290eb.js.map"
+    "main.8d60ace6.js.map": "/static/js/main.8d60ace6.js.map"
   },
   "entrypoints": [
     "static/css/main.d164ef8d.css",
-    "static/js/main.928290eb.js"
+    "static/js/main.8d60ace6.js"
   ]
 }
