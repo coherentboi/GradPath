@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fei110o23$ubsvf0v&q2b_z%)!uw-a2ja8+wfk4(20&6kzneji'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'www.gradpathtutoring.com',
@@ -98,6 +98,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'http://gradpathtutoring.com'
 ]
 
 ROOT_URLCONF = 'gradpath_backend.urls'
