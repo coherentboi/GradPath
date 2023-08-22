@@ -7,6 +7,7 @@ import AuthImage from "../../images/auth_tutoring.png";
 import {useDispatch, useSelector} from "react-redux";
 import {editprofile, getuser, login, register} from "../../actions/auth";
 import {useNavigate} from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 const MdInputField = styled('div')({
     width: "100%",
@@ -154,6 +155,9 @@ const Account = ({setNavColour}) => {
 
     return(
         <Box sx={{display: "flex", flexDirection: "row", width: "100wh", height: "100vh", justifyContent: "center", alignItems: "center", backgroundColor: "background.main"}}>
+            <Helmet>
+                <title>Account | GradPath</title>
+            </Helmet>
             <form onSubmit={handleSubmit} style={{display: "flex", width: "100%", height: "100%"}}>
                 <Box sx={{display: {xs: "none", md: "flex"}, alignItems: "center", justifyContent: "center", width: "50%", height: "90vh", marginTop: "10vh"}}>
                     <Box sx={{width: "calc(100% - 20px)", height: "calc(100% - 80px)", margin: "40px 10px", display: "flex", flexDirection: "column", alignItems: "center", overflowY: "auto"}}>

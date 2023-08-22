@@ -8,6 +8,7 @@ import {get_easyappointments} from "../../actions/tutoring";
 
 import Meeting from "./Meeting/Meeting";
 import {getuser} from "../../actions/auth";
+import {Helmet} from "react-helmet";
 
 
 const LinkLikeButton = styled(Button)({
@@ -87,6 +88,9 @@ const Dashboard = ({setNavColour}) => {
 
     return(
         <Box sx={{ display: "flex", width: "100wh", height: "100vh", bgcolor: "background.main"}}>
+            <Helmet>
+                <title>Dashboard | GradPath</title>
+            </Helmet>
             {user && (
                 <Box sx={{width: "100%", height: "90%", marginTop: {md: "10vh"}, display: "flex"}}>
                     <Box sx={{width: "calc(96% + 10px)", height: "calc(100% - 40px)", margin: "20px calc(2% - 5px) 20px calc(2% - 5px)", display: "flex", flexDirection: {xs: "column", md: "row"}, alignItems: "center", justifyContent: "center"}}>

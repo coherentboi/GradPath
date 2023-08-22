@@ -16,6 +16,7 @@ import tutoringImage from "../../images/home_page1_tutoring.png";
 import mathematicsImage from "../../images/home_page2_mathematics.png";
 import englishImage from "../../images/home_page3_english.png";
 import mobileSubjectsImage from "../../images/home_page2_mobile_subjects.png";
+import {Helmet} from "react-helmet";
 
 const HalfBox = styled(Box)({
     width: "50%",
@@ -45,6 +46,9 @@ const Home = ({setNavColour}) => {
 
     return (
         <FullPage beforeChange={({ to }) => setCurrentSlide(to)} style={{width: "100%", height: "100%"}}>
+            <Helmet>
+                <title>Home | GradPath</title>
+            </Helmet>
             <Slide style={{display: "flex", width: "100%", height: "100%"}}>
                 <Box sx={{ display: "flex", width: "100%", height: "100%", bgcolor: "background.main"}}>
                     <Box sx={{width: "100%", height: "100%", display: {xs: "none", md: "flex"}}}>

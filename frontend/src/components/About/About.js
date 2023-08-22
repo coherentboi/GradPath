@@ -19,6 +19,7 @@ import Profiles from "./Profile/Profiles";
 
 //Tutor Details
 import { TutorDetails } from "../../constants/TutorDetails";
+import {Helmet} from "react-helmet";
 
 const HalfBox = styled(Box)({
     width: "50%",
@@ -29,7 +30,7 @@ const HalfBox = styled(Box)({
 })
 
 
-const Home = ({setNavColour}) => {
+const About = ({setNavColour}) => {
 
     const navigate = useNavigate();
 
@@ -50,6 +51,9 @@ const Home = ({setNavColour}) => {
 
     return (
         <FullPage beforeChange={({ to }) => setCurrentSlide(to)} style={{width: "100%", height: "100%"}}>
+            <Helmet>
+                <title>About Us | GradPath</title>
+            </Helmet>
             <Slide style={{display: "flex", width: "100%", height: "100%"}}>
                 <Box sx={{ display: "flex", width: "100%", height: "100%", bgcolor: "background.main"}}>
                     <Box sx={{width: "100%", height: "100%", display: {xs: "none", md: "flex"}}}>
@@ -127,4 +131,4 @@ const Home = ({setNavColour}) => {
     );
 };
 
-export default Home;
+export default About;

@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.d164ef8d.css",
-    "main.js": "/static/js/main.8d60ace6.js",
-    "static/media/home_page1_tutoring.png": "/static/media/home_page1_tutoring.27ac662f45e642512a02.png",
-    "static/media/auth_tutoring.png": "/static/media/auth_tutoring.df3ed4a92344e37205d3.png",
+    "main.js": "/static/js/main.6d4dad67.js",
     "static/media/BranavanJegatheeswaran.png": "/static/media/BranavanJegatheeswaran.d87bd1e671a9161564e7.png",
     "static/media/SuHuang.png": "/static/media/SuHuang.897a9e0a7e82706939e5.png",
-    "static/media/home_page4_panel_1.png": "/static/media/home_page4_panel_1.cb3a04c781ecb2946c4a.png",
-    "static/media/home_page2_mobile_subjects.png": "/static/media/home_page2_mobile_subjects.28a4ba46904ff8521a8e.png",
-    "static/media/home_page3_english.png": "/static/media/home_page3_english.28a4ba46904ff8521a8e.png",
-    "static/media/about_page1.jpg": "/static/media/about_page1.96c22f32b4940cfaeeab.jpg",
     "static/media/EthanQiu.png": "/static/media/EthanQiu.8e6cbfbf1909f1514f30.png",
     "static/media/about_page_dropout.png": "/static/media/about_page_dropout.ec03153dd75fe49abc69.png",
+    "static/media/home_page2_mobile_subjects.png": "/static/media/home_page2_mobile_subjects.d7b0afa062197302f0d8.png",
+    "static/media/home_page3_english.png": "/static/media/home_page3_english.d7b0afa062197302f0d8.png",
     "static/media/home_page2_mathematics.png": "/static/media/home_page2_mathematics.ff59d26bbbc7df2a8e55.png",
     "static/media/PaulChen.png": "/static/media/PaulChen.6d24929e9042b5f40c72.png",
+    "static/media/about_page1.jpg": "/static/media/about_page1.085a1a415d0a3adff3d6.jpg",
+    "static/media/home_page4_panel_1.png": "/static/media/home_page4_panel_1.3ff66f741d46f1d9b6ae.png",
+    "static/media/auth_tutoring.png": "/static/media/auth_tutoring.99bd32d6b274ef726da8.png",
+    "static/media/home_page1_tutoring.png": "/static/media/home_page1_tutoring.d3e291bd8fc545305731.png",
     "static/media/about_page_stress.png": "/static/media/about_page_stress.e266ef745635a005651d.png",
     "static/media/about_page_fail.png": "/static/media/about_page_fail.b5ff3415d90a24ba9128.png",
     "static/media/EllaQiu.png": "/static/media/EllaQiu.1e50122553c7ad689eba.png",
@@ -21,10 +21,10 @@
     "static/media/gradpathlogo.svg": "/static/media/gradpathlogo.393ef27260ca46450230b7c4b9508f7c.svg",
     "index.html": "/index.html",
     "main.d164ef8d.css.map": "/static/css/main.d164ef8d.css.map",
-    "main.8d60ace6.js.map": "/static/js/main.8d60ace6.js.map"
+    "main.6d4dad67.js.map": "/static/js/main.6d4dad67.js.map"
   },
   "entrypoints": [
     "static/css/main.d164ef8d.css",
-    "static/js/main.8d60ace6.js"
+    "static/js/main.6d4dad67.js"
   ]
 }
