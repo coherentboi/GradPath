@@ -164,3 +164,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EA_URL = 'http://3.144.111.173/easyappointments/index.php/'
 EA_ADMIN_USER = '876pol'
 EA_ADMIN_PASS = 'hqRJ7J-cHmT8Ggu'
+
+SECURE_SSL_REDIRECT = True
