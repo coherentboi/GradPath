@@ -41,8 +41,14 @@ class AppointmentsView(APIView):
 
         appointments = cursor.fetchall()
 
+        # Convert datetime objects to strings
+        for appointment in appointments:
+            appointment['start_datetime'] = appointment['start_datetime'].strftime('%Y-%m-%d %H:%M:%S')
+            appointment['end_datetime'] = appointment['end_datetime'].strftime('%Y-%m-%d %H:%M:%S')
+            appointment['book_datetime'] = appointment['book_datetime'].strftime('%Y-%m-%d %H:%M:%S') if appointment['book_datetime'] else None
+
         # Close the connection
         cursor.close()
         connection.close()
 
-        return Response(json.dumps(appointments))
+        return Response(appointments)
