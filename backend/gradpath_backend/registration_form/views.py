@@ -15,7 +15,7 @@ class RegistrationFormCreateView(CreateAPIView):
 
         send_mail(
             'Someone submitted the registration form!',
-            'View the details here at https://gradpathtutoring.com/api/admin!',
+            'View the details here at https://gradpathtutoring.com/api/admin',
             settings.EMAIL_HOST_USER,  # Sender's email address, taken from settings.py
             [settings.EMAIL_HOST_USER],
             fail_silently=False,
