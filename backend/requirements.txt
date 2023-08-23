@@ -7,3 +7,5 @@ python-dotenv
 dynaconf
 mysqlclient==2.2.0
 requests
+mysql-connector-python
+pytz

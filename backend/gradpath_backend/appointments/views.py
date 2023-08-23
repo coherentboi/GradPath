@@ -1,69 +1,48 @@
+import json
+import os
 from datetime import datetime
 
+import mysql.connector
 import pytz
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from requests.auth import HTTPBasicAuth
-import requests
-from django.conf import settings
 
 
 class AppointmentsView(APIView):
     def get(self, request):
         # Get the email of the currently logged-in user
-        user_email = request.user.email
+        email = request.user.email
 
-        # Define the basic authentication headers
-        auth = HTTPBasicAuth(settings.EA_ADMIN_USER, settings.EA_ADMIN_PASS)
+        # Connection configuration
+        connection = mysql.connector.connect(
+            host=os.getenv('MYSQL_HOST'),
+            user=os.getenv('MYSQL_USER'),
+            password=os.getenv('MYSQL_PASSWORD'),
+            database='easyappointments'
+        )
 
-        # Get all customers
-        customer_url = f"{settings.EA_URL}api/v1/customers"
-        customer_response = requests.get(customer_url, auth=auth)
-        customer_data = customer_response.json()
+        cursor = connection.cursor(dictionary=True)
 
-        # Find the customer matching the email
-        customer_id = None
-        for customer in customer_data:
-            if customer['email'] == user_email:
-                customer_id = customer['id']
-                break
-
-        if customer_id is None:
-            return Response([])
-
-        # Get all appointments
-        appointments_url = f"{settings.EA_URL}api/v1/appointments"
-        appointments_response = requests.get(appointments_url, auth=auth)
-        all_appointments_data = appointments_response.json()
-
-        # Filter the appointments for the customer
-        customer_appointments_data = [appointment for appointment in all_appointments_data if
-                                      appointment['customerId'] == customer_id]
-
-        # Current date and time in Toronto timezone
+        # Convert current time to Toronto time
         toronto_tz = pytz.timezone('America/Toronto')
-        current_date_time = datetime.now(toronto_tz)
+        current_time_toronto = datetime.now(toronto_tz).strftime('%Y-%m-%d %H:%M:%S')
 
-        # Filter for appointments whose end dates haven't passed yet
-        valid_appointments_data = [appointment for appointment in customer_appointments_data if
-                                   datetime.strptime(appointment['end'], '%Y-%m-%d %H:%M:%S').replace(tzinfo=toronto_tz) >= current_date_time]
+        query = '''
+        SELECT ea_appointments.*
+        FROM ea_appointments
+        JOIN ea_users
+        ON ea_appointments.id_users_customer = ea_users.id
+        WHERE ea_appointments.end_datetime > %s
+        AND ea_appointments.is_unavailable = 0
+        AND ea_users.email = %s
+        '''
 
-        # Transform the appointments with provider and service details
-        transformed_appointments = []
-        for appointment in valid_appointments_data:
-            provider_url = f"{settings.EA_URL}api/v1/providers/{appointment['providerId']}"
-            provider_response = requests.get(provider_url, auth=auth)
-            provider_data = provider_response.json()
+        cursor.execute(query, (current_time_toronto, email))
 
-            service_url = f"{settings.EA_URL}api/v1/services/{appointment['serviceId']}"
-            service_response = requests.get(service_url, auth=auth)
-            service_data = service_response.json()
+        appointments = cursor.fetchall()
 
-            transformed_appointment = appointment
-            transformed_appointment['providerName'] = provider_data['firstName'] + ' ' + provider_data['lastName']
-            transformed_appointment['providerEmail'] = provider_data['email']
-            transformed_appointment['serviceName'] = service_data['name']
+        # Close the connection
+        cursor.close()
+        connection.close()
 
-            transformed_appointments.append(transformed_appointment)
-
-        return Response(transformed_appointments)
+        return Response(json.dumps(appointments))
