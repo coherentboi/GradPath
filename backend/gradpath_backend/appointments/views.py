@@ -28,13 +28,15 @@ class AppointmentsView(APIView):
         current_time_toronto = datetime.now(toronto_tz).strftime('%Y-%m-%d %H:%M:%S')
 
         query = '''
-        SELECT ea_appointments.*
+        SELECT ea_appointments.*, CONCAT(tutor.first_name, ' ', tutor.last_name) AS tutor_name, tutor.email AS tutor_email
         FROM ea_appointments
-        JOIN ea_users
-        ON ea_appointments.id_users_customer = ea_users.id
+        JOIN ea_users AS customer
+        ON ea_appointments.id_users_customer = customer.id
+        JOIN ea_users AS tutor
+        ON ea_appointments.id_users_provider = tutor.id
         WHERE ea_appointments.end_datetime > %s
         AND ea_appointments.is_unavailable = 0
-        AND ea_users.email = %s
+        AND customer.email = %s
         '''
 
         cursor.execute(query, (current_time_toronto, email))
@@ -45,7 +47,8 @@ class AppointmentsView(APIView):
         for appointment in appointments:
             appointment['start_datetime'] = appointment['start_datetime'].strftime('%Y-%m-%d %H:%M:%S')
             appointment['end_datetime'] = appointment['end_datetime'].strftime('%Y-%m-%d %H:%M:%S')
-            appointment['book_datetime'] = appointment['book_datetime'].strftime('%Y-%m-%d %H:%M:%S') if appointment['book_datetime'] else None
+            appointment['book_datetime'] = appointment['book_datetime'].strftime('%Y-%m-%d %H:%M:%S') if appointment[
+                'book_datetime'] else None
 
         # Close the connection
         cursor.close()
