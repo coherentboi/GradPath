@@ -55,7 +55,7 @@ const CourseModal = ({details, modalOpen, setModalOpen}) => {
                                     <Typography sx={{marginLeft: "5px", marginTop: "5px", fontSize: {xs: "18px", md: "32px"}, fontFamily: "Open Sans, sans-serif", fontWeight: "700", flexGrow: 1}}>
                                         {details.name}
                                     </Typography>
-                                    <Button onClick={() => {navigate("/dashboard")}} sx={{fontSize: {xs: "10px", md: "14px"}, fontFamily: "Open Sans, sans-serif", padding: {xs: "4px 8px", md: "8px 12px"}, backgroundColor: "primary.main", color: "white", marginRight: "10px", ":hover":{backgroundColor: "primary.main", filter: "brightness(75%)", transition: "0.3s"}}}>
+                                    <Button onClick={() => {navigate("/dashboard")}} sx={{fontSize: {xs: "10px", md: "14px"}, fontFamily: "Open Sans, sans-serif", padding: {xs: "2px 8px", md: "8px 12px"}, backgroundColor: "primary.main", color: "white", marginRight: "10px", ":hover":{backgroundColor: "primary.main", filter: "brightness(75%)", transition: "0.3s"}}}>
                                         Book Now!
                                     </Button>
                                     <img src={logo} style={{height: "70px", aspectRatio: 1, alignSelf: "center", marginRight: "5px"}}/>
@@ -90,7 +90,7 @@ const CourseModal = ({details, modalOpen, setModalOpen}) => {
                                             details.certifications.map((certification) => (
                                                 <Tooltip title={certification.description}>
                                                     <img
-                                                        style={{height: "calc(100% - 10px)", maxHeight: {xs: "75px", md: "200px"}, aspectRatio: 1, borderRadius: "50%", bgcolor: "primary.main", marginRight: "20px", marginBottom: "5px"}}
+                                                        style={{height: "calc(100% - 10px)", maxHeight: "200px", aspectRatio: 1, borderRadius: "50%", bgcolor: "primary.main", marginRight: "20px", marginBottom: "5px"}}
                                                         src={certification.image}
                                                     />
                                                 </Tooltip>

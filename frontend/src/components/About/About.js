@@ -142,7 +142,7 @@ const About = ({setNavColour}) => {
                 <Box sx={{ display: "flex", width: "100%", height: "100%", bgcolor: "background.main"}}>
                     <Box sx={{ display: "flex", width: "100%", height: "87%", marginTop: "15vh", flexDirection: "column", alignItems: "center"}}>
                         <Box sx={{display: "flex", width: "100%", flexDirection: "row"}}>
-                            <Typography sx={{fontFamily: "Open Sans, sans-serif", fontSize: {xs: "18px", md: "36px"}, fontWeight: "700", flexGrow: 1, marginLeft: "calc(8% + 10px)"}}>Meet our Team!</Typography>
+                            <Typography sx={{fontFamily: "Open Sans, sans-serif", fontSize: {xs: "18px", md: "36px"}, fontWeight: "700", flexGrow: 1, marginLeft: "calc(2% + 10px)"}}>Meet our Team!</Typography>
                             <Box sx={{display: "flex", width: "25%", flexDirection: "row", justifyContent: "flex-end", alignItems: "center"}}>
                                 <select
                                     value={searchParameters}

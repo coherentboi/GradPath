@@ -110,15 +110,17 @@ const Dashboard = ({setNavColour}) => {
                                     </Box>
                                 </DashboardBox>
                             </DashboardBox>
-                            <DashboardBox sx={{display: {xs: "none", md: "flex"}, flexDirection: "column", width: "100%", height: "70%"}}>
+                            <DashboardBox sx={{display: "flex", flexDirection: "column", width: "100%", height: "70%"}}>
                                 <DashboardBox sx={{height: "15%", width: "100%", alignItems: "flex-start"}}>
-                                    <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", width: "calc(100% - 10px)", height: "calc(10% - 10px)", margin: "auto"}}>
+                                    <Box sx={{display: {xs: "none", md: "flex"}, flexDirection: "row", alignItems: "center", width: "calc(100% - 10px)", height: "calc(10% - 10px)", margin: "auto"}}>
                                         <Typography sx={{fontFamily: "Open Sans, sans-serif", fontWeight: "700", fontSize: "32px", display: "flex", flexGrow: 1}}>My Courses</Typography>
                                         <LinkLikeButton>See More</LinkLikeButton>
                                     </Box>
                                 </DashboardBox>
                                 <DashboardBox sx={{height: "85%", width: "100%"}}>
-                                    Online courses and materials coming soon!
+                                    <Box sx={{display: {xs: "none", md: "flex"}}}>
+                                        Online courses and materials coming soon!
+                                    </Box>
                                 </DashboardBox>
                             </DashboardBox>
                         </DashboardBox>
