@@ -4,6 +4,14 @@ import EthanQiu from "../images/Tutors/EthanQiu.png";
 import PaulChen from "../images/Tutors/PaulChen.png";
 import SuHuang from "../images/Tutors/SuHuang.png";
 import EllaQiu from "../images/Tutors/EllaQiu.png";
+import higherLevelMathematicsIB7 from "../images/Badges/HigherLevelMathematicsIB7.png";
+import higherLevelMathematicsExcellence from "../images/Badges/HigherLevelMathematicsExcellence.png";
+import englishExcellence from "../images/Badges/EnglishExcellence.png";
+import physicsExcellence from "../images/Badges/PhysicsExcellence.png";
+import biologyExcellence from "../images/Badges/BiologyExcellence.png";
+import mathematicsIB7 from "../images/Badges/MathematicsIB7.png";
+import mathematicsExcellence from "../images/Badges/MathematicsExcellence.png";
+import chemistryExcellence from "../images/Badges/ChemistryExcellence.png";
 
 export const TutorDetails = [
     {
@@ -16,9 +24,40 @@ export const TutorDetails = [
         email: "",
         phone: "",
         instagram: "",
-        subjectsDescription: "",
+        subjectsDescription: "Higher Level Mathematics, Biology, Physics",
         subjects: [
-            "Management"
+            "Tutor",
+            "Management",
+            "HL Mathematics",
+            "Mathematics",
+            "Biology",
+            "Physics"
+        ],
+        certifications: [
+            {
+                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB higher level mathematics standard.",
+                image: higherLevelMathematicsIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB higher level mathematics standard.",
+                image: higherLevelMathematicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB mathematics standard.",
+                image: mathematicsIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB mathematics standard.",
+                image: mathematicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB biology standard.",
+                image: biologyExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB physics standard.",
+                image: physicsExcellence
+            },
         ]
     },
     {
@@ -26,14 +65,27 @@ export const TutorDetails = [
         role: "Founder and Design Lead",
         image: BranavanJegatheeswaran,
         grade: "12",
-        about: "Hey! My name's Branavan Jegatheeswaran. I'm currently in the IB program  going into my senior year. IB is all about balance; without it, it's hard to excel. I'm currently running 3 businesses, play on numerous varsity teams and continue to maintain high academic success, currently holding an average of 9X in my top six subjects, including Higher-Level Math. I've been teaching since I was a kid, helping fellow students in my class, and I already my share of experience tutoring.",
+        about: "Hey! My name's Branavan Jegatheeswaran. I'm currently in the IB program going into my senior year. IB is all about balance; without it, it's hard to excel. I'm currently running 3 businesses, play on numerous varsity teams and continue to maintain high academic success, currently holding an average of 94 in my top six subjects, including Higher-Level Math. I've been teaching since I was a kid, helping fellow students in my class, and I already my share of experience tutoring.",
         school: "Merivale High School",
         email: "",
         phone: "",
         instagram: "",
         subjectsDescription: "",
         subjects: [
-            "Management"
+            "Tutor",
+            "Management",
+            "HL Mathematics",
+            "Mathematics"
+        ],
+        certifications: [
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB higher level mathematics standard.",
+                image: higherLevelMathematicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB mathematics standard.",
+                image: mathematicsExcellence
+            },
         ]
     },
     {
@@ -46,9 +98,40 @@ export const TutorDetails = [
         email: "",
         phone: "",
         instagram: "",
-        subjectsDescription: "",
+        subjectsDescription: "Higher Level Mathematics, English, Physics",
         subjects: [
-            "Management"
+            "Tutor",
+            "Management",
+            "HL Mathematics",
+            "Mathematics",
+            "English",
+            "Physics"
+        ],
+        certifications: [
+            {
+                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB higher level mathematics standard.",
+                image: higherLevelMathematicsIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB higher level mathematics standard.",
+                image: higherLevelMathematicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB mathematics standard.",
+                image: mathematicsIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB mathematics standard.",
+                image: mathematicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB physics standard.",
+                image: physicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB English standard.",
+                image: englishExcellence
+            },
         ]
     },
     {
@@ -56,14 +139,45 @@ export const TutorDetails = [
         role: "Co-Founder and Tech Co-Lead",
         image: PaulChen,
         grade: "12",
-        about: "Hello! I am Paul Chen, an IB student going into Grade 12 currently holding an average of 9X in my top six subjects. My passion for Mathematics and Computer Science has led me to the rigorous Higher-Level Mathematics course, and led me to qualify for prestigious competitions, such as the Canadian Computing Olympiad and the American Invitational Mathematics Examination. Aside from academics, I’ve cultivated a love for music, having completed RCM Level 10 piano with first-class honors.",
+        about: "Hello! I am Paul Chen, an IB student going into Grade 12 currently holding an average of 96 in my top six subjects. My passion for Mathematics and Computer Science has led me to the rigorous Higher-Level Mathematics course, and led me to qualify for prestigious competitions, such as the Canadian Computing Olympiad and the American Invitational Mathematics Examination. Aside from academics, I’ve cultivated a love for music, having completed RCM Level 10 piano with first-class honors.",
         school: "Merivale High School",
         email: "",
         phone: "",
         instagram: "",
-        subjectsDescription: "",
+        subjectsDescription: "Higher Level Mathematics, English, Physics",
         subjects: [
-            "Management"
+            "Tutor",
+            "Management",
+            "HL Mathematics",
+            "Mathematics",
+            "English",
+            "Physics"
+        ],
+        certifications: [
+            {
+                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB higher level mathematics standard.",
+                image: higherLevelMathematicsIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB higher level mathematics standard.",
+                image: higherLevelMathematicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB mathematics standard.",
+                image: mathematicsIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB mathematics standard.",
+                image: mathematicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB physics standard.",
+                image: physicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB English standard.",
+                image: englishExcellence
+            },
         ]
     },
     {
@@ -71,14 +185,17 @@ export const TutorDetails = [
         role: "Marketing Co-Lead",
         image: EllaQiu,
         grade: "11",
-        about: "",
+        about: "Hi! My name is Ella Qiu, and I’m entering grade 11 as an IB student at Merivale High School. While I have various academic interests, my strongest passion lies in business, particularly entrepreneurship and finance. Over the summer, I had the valuable opportunity to participate in a business leadership program at Western’s Ivey Business School. Through this experience, I further developed my critical thinking and management skills and familiarized myself with the real business world through case studies. I also have a strong interest in debate, having competitively debated for almost 4 years and coaching classes for 2 years. In my free time, I like reading and listening to music.",
         school: "Merivale High School",
         email: "",
         phone: "",
         instagram: "",
         subjectsDescription: "",
         subjects: [
+            "Tutor",
             "Management"
+        ],
+        certifications: [
         ]
     },
     {
@@ -93,7 +210,30 @@ export const TutorDetails = [
         instagram: "",
         subjectsDescription: "",
         subjects: [
-            "Management"
+            "Tutor",
+            "Management",
+            "Mathematics",
+            "Biology",
+            "Chemistry",
+            "Physics"
+        ],
+        certifications: [
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB mathematics standard.",
+                image: mathematicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB biology standard.",
+                image: biologyExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB chemistry standard.",
+                image: chemistryExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification for the IB physics standard.",
+                image: physicsExcellence
+            },
         ]
     },
 ]

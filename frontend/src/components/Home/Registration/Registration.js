@@ -31,7 +31,7 @@ const MdStyledInput = styled('input')({
     borderRadius: "0",
     outline: "none",
     padding: "10px 0",
-    backgroundColor: "#FFFFFA",
+    backgroundColor: "#fdfdfe",
     '&:focus': {
         borderBottom: "2px solid #1216D3"
     },
@@ -65,7 +65,7 @@ const XsStyledInput = styled('input')({
     color: "black",
     outline: "none",
     padding: "6px 0",
-    backgroundColor: "#FFFFFA",
+    backgroundColor: "#fdfdfe",
     '&:focus': {
         borderBottom: "2px solid #1216D3"
     },

@@ -41,6 +41,11 @@ const Profiles = ({searchParameters}) => {
         }
     };
 
+    useEffect(() => {
+        scrollRight();
+        scrollLeft();
+    }, [searchParameters])
+
     return (
         <Box sx={{
             display: "flex",
@@ -72,7 +77,7 @@ const Profiles = ({searchParameters}) => {
                     display: 'none', // For Chrome, Safari and newer versions of Opera
                 }}}>
                 {
-                    TutorDetails.map((details) => (
+                    TutorDetails.filter((tutor) => (tutor.subjects.includes(searchParameters))).map((details) => (
                         <Profile details={details}/>
                     ))
                 }

@@ -11,13 +11,15 @@ import NotFound from "./components/404/NotFound";
 import Auth from "./components/Auth/Auth";
 import Dashboard from "./components/Dashboard/Dashboard";
 import About from "./components/About/About";
+import Account from "./components/Account/Account";
+import Programs from "./components/Programs/Programs";
+import Footer from "./components/Footer/Footer";
 
 //MUI Material Imports
 import {Box, createTheme, ThemeProvider} from "@mui/material";
 
 //Import CSS
 import './App.css';
-import Account from "./components/Account/Account";
 
 
 const palette = createTheme({
@@ -34,7 +36,7 @@ const palette = createTheme({
         },
         background: {
             light: '#E2E2E2',
-            main: '#fffff9',
+            main: '#fdfdfe',
             dark: '#eaeaea'
         },
     },
@@ -59,6 +61,7 @@ const App = () => {
                             <Route path="/account" element={<Account setNavColour={setNavColour}/>}/>
                             <Route path="/auth" element={<Auth setNavColour={setNavColour}/>}/>
                             <Route path="/dashboard" element={<Dashboard setNavColour={setNavColour}/>}/>
+                            <Route path="/programs" element={<Programs setNavColour={setNavColour}/>}/>
                         </Routes>
                     </Box>
                 </Box>

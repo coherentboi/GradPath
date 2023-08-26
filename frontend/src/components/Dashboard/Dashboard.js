@@ -118,17 +118,7 @@ const Dashboard = ({setNavColour}) => {
                                     </Box>
                                 </DashboardBox>
                                 <DashboardBox sx={{height: "85%", width: "100%"}}>
-                                    <Grid sx={{height: "100%", width: "100%"}} container>
-                                        {
-                                            courses.map((course, index) => (
-                                                <Grid sx={{display: "flex", alignItems: "center", justifyContent: "center"}} xs={4}>
-                                                    <Box sx={{bgcolor: "primary.main", display: "flex", width: "calc(100% - 10px)", height: "calc(100% - 10px)", margin: "auto", borderRadius: "4px"}}>
-
-                                                    </Box>
-                                                </Grid>
-                                            ))
-                                        }
-                                    </Grid>
+                                    Online courses and materials coming soon!
                                 </DashboardBox>
                             </DashboardBox>
                         </DashboardBox>
