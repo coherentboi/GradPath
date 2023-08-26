@@ -97,20 +97,20 @@ const Dashboard = ({setNavColour}) => {
                         <DashboardBox sx={{flexDirection: "column", width: {xs: "calc(100% - 10px)", md: "calc(50% - 5px)"}, height: {md: "100%"}, marginRight: {md: "5px"}}}>
                             <DashboardBox sx={{width: "100%", height: "30%"}}>
                                 <DashboardBox sx={{height: "100%", aspectRatio: "1"}}>
-                                    <Avatar sx={{fontSize: "60px", bgcolor: "primary.main", height: "calc(100% - 10px)", width: "calc(100% - 10px)", margin: "auto"}}>{user.username[0]}</Avatar>
+                                    <Avatar sx={{fontSize: {xs: "30", md: "60px"}, bgcolor: "primary.main", height: "calc(100% - 10px)", width: "calc(100% - 10px)", margin: "auto"}}>{user.username[0]}</Avatar>
                                 </DashboardBox>
                                 <DashboardBox sx={{height: "100%", flexGrow: 1}}>
                                     <Box sx={{display: "flex", flexDirection: "column", width: "calc(100% - 20px)", height: "calc(100% - 10px)", margin: "auto"}}>
-                                        <Typography sx={{fontWeight: "700", fontFamily: "Open Sans, sans-serif", fontSize: "32px"}}>{user.profile.name}</Typography>
-                                        <Typography sx={{fontFamily: "Open Sans, sans-serif", fontSize: "16px"}}>@{user.username}</Typography>
-                                        <Typography sx={{fontFamily: "Open Sans, sans-serif", fontSize: "24px", marginTop: "10px"}}>{user.profile.school} {user.profile.high_school_graduation_year}</Typography>
+                                        <Typography sx={{fontWeight: "700", fontFamily: "Open Sans, sans-serif", fontSize: {xs: "24px", md: "32px"}}}>{user.profile.name}</Typography>
+                                        <Typography sx={{fontFamily: "Open Sans, sans-serif", fontSize: {xs: "14px", md: "16px"}}}>@{user.username}</Typography>
+                                        <Typography sx={{fontFamily: "Open Sans, sans-serif", fontSize: {xs: "18px", md: "24px"}, marginTop: "10px"}}>{user.profile.school} {user.profile.high_school_graduation_year}</Typography>
                                         <Button onClick={() => navigate("/account")} sx={{marginTop: "5px", backgroundColor: "secondary.main", width: "150px", color: "black", ":hover":{backgroundColor: "secondary.main", filter: "brightness(75%)"}}}>
                                             Edit Profile
                                         </Button>
                                     </Box>
                                 </DashboardBox>
                             </DashboardBox>
-                            <DashboardBox sx={{flexDirection: "column", width: "100%", height: "70%"}}>
+                            <DashboardBox sx={{display: {xs: "none", md: "flex"}, flexDirection: "column", width: "100%", height: "70%"}}>
                                 <DashboardBox sx={{height: "15%", width: "100%", alignItems: "flex-start"}}>
                                     <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", width: "calc(100% - 10px)", height: "calc(10% - 10px)", margin: "auto"}}>
                                         <Typography sx={{fontFamily: "Open Sans, sans-serif", fontWeight: "700", fontSize: "32px", display: "flex", flexGrow: 1}}>My Courses</Typography>
@@ -122,11 +122,11 @@ const Dashboard = ({setNavColour}) => {
                                 </DashboardBox>
                             </DashboardBox>
                         </DashboardBox>
-                        <DashboardBox sx={{flexDirection: "column", width: {xs: "calc(100% - 10px)", md: "calc(50% - 5px)"}, height: {md: "100%"}, marginLeft:{md: "5px"}}}>
+                        <DashboardBox sx={{flexDirection: "column", width: {xs: "calc(100% - 10px)", md: "calc(50% - 5px)"}, height: {md: "100%"}, marginTop: {xs: "10px", md: "0px"}, marginLeft:{md: "5px"}}}>
                             <DashboardBox sx={{height: "10%", width: "100%", alignItems: "flex-start"}}>
                                 <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", width: "calc(100% - 10px)", height: "calc(10% - 10px)", margin: "auto"}}>
-                                    <Typography sx={{fontFamily: "Open Sans, sans-serif", fontWeight: "700", fontSize: "32px", display: "flex", flexGrow: 1}}>Upcoming Sessions</Typography>
-                                    <Button onClick={openEasyAppointments} sx={{fontSize: "16px", fontFamily: "Open Sans, sans-serif", padding: "10px 15px", backgroundColor: "primary.main", color: "white", ":hover":{backgroundColor: "primary.main", filter: "brightness(75%)", transition: "0.3s"}}}>
+                                    <Typography sx={{fontFamily: "Open Sans, sans-serif", fontWeight: "700", fontSize: {xs: "24px", md: "32px"}, display: "flex", flexGrow: 1}}>Upcoming Sessions</Typography>
+                                    <Button onClick={openEasyAppointments} sx={{fontSize: {xs: "10px", md: "16px"}, fontFamily: "Open Sans, sans-serif", padding: {xs: "4px 8px", md: "10px 15px"}, backgroundColor: "primary.main", color: "white", marginRight: "10px", ":hover":{backgroundColor: "primary.main", filter: "brightness(75%)", transition: "0.3s"}}}>
                                         Book Now!
                                     </Button>
                                 </Box>
@@ -142,7 +142,7 @@ const Dashboard = ({setNavColour}) => {
                                                 <Button
                                                     onClick={openEasyAppointments}
                                                     sx={{
-                                                        fontSize: "16px",
+                                                        fontSize: {xs: "10px", md: "16px"},
                                                         fontFamily: "Open Sans, sans-serif",
                                                         padding: "10px 15px",
                                                         marginTop: "20px",

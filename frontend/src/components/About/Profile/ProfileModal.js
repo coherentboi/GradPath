@@ -109,7 +109,7 @@ const ProfileModal = ({details, modalOpen, setModalOpen}) => {
                                             details.certifications.map((certification) => (
                                                 <Tooltip title={certification.description}>
                                                     <img
-                                                        style={{height: "calc(100% - 10px)", maxHeight: "150px", aspectRatio: 1, borderRadius: "50%", bgcolor: "primary.main", marginRight: "20px", marginBottom: "5px", objectFit: "cover"}}
+                                                        style={{height: "calc(100% - 10px)", maxHeight: {xs: "50px", md: "150px"}, aspectRatio: 1, borderRadius: "50%", bgcolor: "primary.main", marginRight: "20px", marginBottom: "5px", objectFit: "cover"}}
                                                         src={certification.image}
                                                     />
                                                 </Tooltip>
