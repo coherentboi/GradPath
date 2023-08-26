@@ -36,6 +36,8 @@ const Home = ({setNavColour}) => {
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
+    const [free, setFree] = useState(true);
+
     useEffect(() => {
         if(currentSlide === 0){
             setNavColour("background");
@@ -46,11 +48,27 @@ const Home = ({setNavColour}) => {
     }, [currentSlide])
 
     return (
-        <FullPage beforeChange={({ to }) => setCurrentSlide(to)} style={{width: "100%", height: "100%"}}>
+        <FullPage beforeChange={({ to }) => setCurrentSlide(to)} style={{width: "100%", height: "100%",}}>
             <Helmet>
                 <title>Home | GradPath</title>
             </Helmet>
-            <Slide style={{display: "flex", width: "100%", height: "100%", backgroundColor: "background.main"}}>
+            <Slide style={{display: "flex", width: "100%", height: "100%", justifyContent: "center", backgroundColor: "background.main"}}>
+                {
+                    free && (
+                        <Box sx={{backgroundColor: "primary.main", zIndex: "1001", display: "flex", borderRadius: "4px", color: "background.main", height: "60px", width: "calc(100% - 20px)", margin: 'auto', position: "absolute", top: "0", alignItems: "center", justifyContent: "center"}}>
+                            <Box sx={{display: "flex", justifyContent: "flex-end", width: "20%"}}>
+                            </Box>
+                            <Box sx={{display: "flex", width: "60%", justifyContent: "center"}}>
+                                <Typography sx={{fontWeight: "700", textAlign: "center"}}>For a limited time, GradPath tutoring is free! Make sure to get the deal before it expires!</Typography>
+                            </Box>
+                            <Box sx={{display: "flex", justifyContent: "flex-end", width: "20%"}}>
+                                <Button onClick={() => setFree(false)} color="background" sx={{justifySelf: "flex-end", marginLeft: "auto", marginRight: "10px"}}>
+                                    Close
+                                </Button>
+                            </Box>
+                        </Box>
+                    )
+                }
                 <Box sx={{ display: "flex", width: "100%", height: "100%"}}>
                     <Box sx={{width: "100%", height: "100%", display: {xs: "none", md: "flex"}}}>
                         <HalfBox>

@@ -92,7 +92,7 @@ const Dashboard = ({setNavColour}) => {
                 <title>Dashboard | GradPath</title>
             </Helmet>
             {user && (
-                <Box sx={{width: "100%", height: "90%", marginTop: {md: "10vh"}, display: "flex"}}>
+                <Box sx={{width: "100%", height: {xs: "95%", md: "90%"}, marginTop: {md: "10vh"}, display: "flex"}}>
                     <Box sx={{width: "calc(96% + 10px)", height: "calc(100% - 40px)", margin: "20px calc(2% - 5px) 20px calc(2% - 5px)", display: "flex", flexDirection: {xs: "column", md: "row"}, alignItems: "center", justifyContent: "center"}}>
                         <DashboardBox sx={{flexDirection: "column", width: {xs: "calc(100% - 10px)", md: "calc(50% - 5px)"}, height: {md: "100%"}, marginRight: {md: "5px"}}}>
                             <DashboardBox sx={{width: "100%", height: "30%"}}>
@@ -124,8 +124,8 @@ const Dashboard = ({setNavColour}) => {
                                 </DashboardBox>
                             </DashboardBox>
                         </DashboardBox>
-                        <DashboardBox sx={{flexDirection: "column", width: {xs: "calc(100% - 10px)", md: "calc(50% - 5px)"}, height: {md: "100%"}, marginTop: {xs: "10px", md: "0px"}, marginLeft:{md: "5px"}}}>
-                            <DashboardBox sx={{height: "10%", width: "100%", alignItems: "flex-start"}}>
+                        <DashboardBox sx={{flexDirection: "column", width: {xs: "calc(100% - 10px)", md: "calc(50% - 5px)"}, height: {md: "100%"}, marginLeft:{md: "5px"}}}>
+                            <DashboardBox sx={{height: "10%", width: "100%", alignItems: "flex-start", marginTop: {xs: "10px", md: "0px"}}}>
                                 <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", width: "calc(100% - 10px)", height: "calc(10% - 10px)", margin: "auto"}}>
                                     <Typography sx={{fontFamily: "Open Sans, sans-serif", fontWeight: "700", fontSize: {xs: "24px", md: "32px"}, display: "flex", flexGrow: 1}}>Upcoming Sessions</Typography>
                                     <Button onClick={openEasyAppointments} sx={{fontSize: {xs: "10px", md: "16px"}, fontFamily: "Open Sans, sans-serif", padding: {xs: "4px 8px", md: "10px 15px"}, backgroundColor: "primary.main", color: "white", marginRight: "10px", ":hover":{backgroundColor: "primary.main", filter: "brightness(75%)", transition: "0.3s"}}}>

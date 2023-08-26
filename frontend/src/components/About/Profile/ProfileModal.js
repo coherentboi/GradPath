@@ -50,7 +50,7 @@ const ProfileModal = ({details, modalOpen, setModalOpen}) => {
                                     borderRadius: "4px",
                                 }}/>
                             </Box>
-                            <Box sx={{display: "flex", width: {xs: "100%", md: "60%"}, height: "100%", marginLeft: {xs: "10px",md: "0px"}, flexDirection: "column"}}>
+                            <Box sx={{display: "flex", width: {xs: "100%", md: "60%"}, height: "100%", flexDirection: "column"}}>
                                 <Box sx={{display: "flex", width: "calc(100% - 5px)", marginRight: "10px", alignItems: "center"}}>
                                     <Typography sx={{marginLeft: "5px", marginTop: "5px", fontSize: {xs: "18px", md: "32px"}, fontFamily: "Open Sans, sans-serif", fontWeight: "700", flexGrow: 1}}>
                                         {details.name}
@@ -103,12 +103,14 @@ const ProfileModal = ({details, modalOpen, setModalOpen}) => {
                                         width: "100%",
                                         overflowX: "auto",
                                         marginBottom: "10px",
-                                        flexWrap: "nowrap"
+                                        flexWrap: "nowrap",
+                                        WebkitOverflowScrolling: 'touch'
                                     }}>
                                         {
                                             details.certifications.map((certification) => (
                                                 <Tooltip title={certification.description}>
                                                     <img
+                                                        alt=""
                                                         style={{height: "calc(100% - 10px)", maxHeight: "150px", aspectRatio: 1, borderRadius: "50%", bgcolor: "primary.main", marginRight: "20px", marginBottom: "5px", objectFit: "cover"}}
                                                         src={certification.image}
                                                     />

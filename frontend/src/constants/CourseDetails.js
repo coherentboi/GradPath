@@ -24,10 +24,7 @@ export const CourseDetails = [
         image: mathematics,
         description: "",
         curriculum: [
-            "General Functions",
-            "Rational Functions",
-            "Trigonometric Functions",
-            "Logarithmic Functions",
+            "General, Rational, Trigonometric and Logarithmic Functions",
             "Derivatives",
             "Implicit Differentiation",
             "Integration",
@@ -37,19 +34,19 @@ export const CourseDetails = [
         ],
         certifications: [
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB higher level mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB higher level mathematics standard.",
                 image: higherLevelMathematicsIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB higher level mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB higher level mathematics standard.",
                 image: higherLevelMathematicsExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB mathematics standard.",
                 image: mathematicsIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB mathematics standard.",
                 image: mathematicsExcellence
             },
 
@@ -72,11 +69,11 @@ export const CourseDetails = [
         ],
         certifications: [
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB English standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB English standard.",
                 image: englishIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB English standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB English standard.",
                 image: englishExcellence
             },
         ],
@@ -88,11 +85,11 @@ export const CourseDetails = [
         curriculum: ["Curriculum coming soon!"],
         certifications: [
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB biology standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB biology standard.",
                 image: biologyIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB biology standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB biology standard.",
                 image: biologyExcellence
             },
         ],
@@ -114,11 +111,11 @@ export const CourseDetails = [
         ],
         certifications: [
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB chemistry standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB chemistry standard.",
                 image: chemistryIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB chemistry standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB chemistry standard.",
                 image: chemistryExcellence
             },
         ],
@@ -140,11 +137,11 @@ export const CourseDetails = [
         ],
         certifications: [
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB physics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB physics standard.",
                 image: physicsIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB physics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB physics standard.",
                 image: physicsExcellence
             },
         ],

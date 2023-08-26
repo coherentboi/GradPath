@@ -12,6 +12,7 @@ import biologyExcellence from "../images/Badges/BiologyExcellence.png";
 import mathematicsIB7 from "../images/Badges/MathematicsIB7.png";
 import mathematicsExcellence from "../images/Badges/MathematicsExcellence.png";
 import chemistryExcellence from "../images/Badges/ChemistryExcellence.png";
+import goldMedal2023 from "../images/Badges/GoldMedal2023.png";
 
 export const TutorDetails = [
     {
@@ -19,7 +20,7 @@ export const TutorDetails = [
         role: "Founder",
         image: JustinOh,
         grade: "12",
-        about: "Hello! My name is Justin Oh, and I am an IB student entering grade 12 with an average of 95% in my top six subjects, including Higher-Level Math. I have a keen interest in mathematics and frequently participate in math competitions. I've been honored with invitations to compete in elite contests like the AIME and to attend prestigious workshops such as the Auckland Workshop. This summer, I was thrilled to be invited by Johns Hopkins University to join their accelerated Engineering program, where I have delved into advanced physics and engineering concepts. In my spare time, I enjoy exploring engineering further, and I am currently working on a project that leverages machine learning to optimize traffic flow.",
+        about: "Hello! My name is Justin Oh, and I am an IB student entering grade 12 with an average of 95% in my top six subjects, including Higher-Level Math. I have a keen interest in mathematics and frequently participate in math competitions. I've been honored with invitations to compete in elite contests like the AIME and to attend prestigious workshops such as the Auckland Workshop.",
         school: "Merivale High School",
         email: "",
         phone: "",
@@ -35,27 +36,27 @@ export const TutorDetails = [
         ],
         certifications: [
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB higher level mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB higher level mathematics standard.",
                 image: higherLevelMathematicsIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB higher level mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB higher level mathematics standard.",
                 image: higherLevelMathematicsExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB mathematics standard.",
                 image: mathematicsIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB mathematics standard.",
                 image: mathematicsExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB biology standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB biology standard.",
                 image: biologyExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB physics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB physics standard.",
                 image: physicsExcellence
             },
         ]
@@ -70,7 +71,7 @@ export const TutorDetails = [
         email: "",
         phone: "",
         instagram: "",
-        subjectsDescription: "",
+        subjectsDescription: "Higher Level Mathematics",
         subjects: [
             "Tutor",
             "Management",
@@ -79,11 +80,11 @@ export const TutorDetails = [
         ],
         certifications: [
             {
-                description: "Tutors with this certification have met GradPath certification for the IB higher level mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB higher level mathematics standard.",
                 image: higherLevelMathematicsExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB mathematics standard.",
                 image: mathematicsExcellence
             },
         ]
@@ -93,7 +94,7 @@ export const TutorDetails = [
         role: "Co-Founder and Tech Co-Lead",
         image: EthanQiu,
         grade: "12",
-        about: "Hi! My name is Ethan Qiu, and I'm an IB student going into grade 12 with an average of 96% in my top 6 subjects including Higher-Level Math. Besides developing numerous software applications, I am also an avid debater, having been invited to the Canadian national championships. I have been teaching my own classes for 3 years, and have been staffing at summer camps for the last 5 years. In my free time, I love playing badminton, including playing on the school team.",
+        about: "Hi! My name is Ethan Qiu, and I'm an IB student going into grade 12 with an average of 96% in my top 6 subjects including Higher-Level Math. Besides developing numerous software applications, I am also an avid debater, having been invited to the Canadian national championships. I have been teaching my own classes for 3 years, and have been staffing at summer camps to tutor at the last 5 years. In my free time, I love playing badminton, including playing on the school team.",
         school: "Merivale High School",
         email: "",
         phone: "",
@@ -109,27 +110,27 @@ export const TutorDetails = [
         ],
         certifications: [
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB higher level mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB higher level mathematics standard.",
                 image: higherLevelMathematicsIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB higher level mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB higher level mathematics standard.",
                 image: higherLevelMathematicsExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB mathematics standard.",
                 image: mathematicsIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB mathematics standard.",
                 image: mathematicsExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB physics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB physics standard.",
                 image: physicsExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB English standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB English standard.",
                 image: englishExcellence
             },
         ]
@@ -155,27 +156,31 @@ export const TutorDetails = [
         ],
         certifications: [
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB higher level mathematics standard.",
+                description: "Team members with the Gold Medal are recognized for having contributed an incredible amount to GradPath and its students.",
+                image: goldMedal2023
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB higher level mathematics standard.",
                 image: higherLevelMathematicsIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB higher level mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB higher level mathematics standard.",
                 image: higherLevelMathematicsExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the highest level (IB level 7) of the IB mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB mathematics standard.",
                 image: mathematicsIB7
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB mathematics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB mathematics standard.",
                 image: mathematicsExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB physics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB physics standard.",
                 image: physicsExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB English standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB English standard.",
                 image: englishExcellence
             },
         ]
@@ -185,7 +190,7 @@ export const TutorDetails = [
         role: "Marketing Co-Lead",
         image: EllaQiu,
         grade: "11",
-        about: "Hi! My name is Ella Qiu, and I’m entering grade 11 as an IB student at Merivale High School. While I have various academic interests, my strongest passion lies in business, particularly entrepreneurship and finance. Over the summer, I had the valuable opportunity to participate in a business leadership program at Western’s Ivey Business School. Through this experience, I further developed my critical thinking and management skills and familiarized myself with the real business world through case studies. I also have a strong interest in debate, having competitively debated for almost 4 years and coaching classes for 2 years. In my free time, I like reading and listening to music.",
+        about: "Hi! My name is Ella Qiu, and I’m entering grade 11 as an IB student at Merivale High School. While I have various academic interests, my strongest passion lies in business, particularly entrepreneurship and finance. Over the summer, I had the valuable opportunity to participate in a business leadership program at Western’s Ivey Business School. I also have a strong interest in debate, having competitively debated for almost 4 years and coaching classes for 2 years. In my free time, I like reading and listening to music.",
         school: "Merivale High School",
         email: "",
         phone: "",
@@ -196,6 +201,14 @@ export const TutorDetails = [
             "Management"
         ],
         certifications: [
+            {
+                description: "Team members with the Gold Medal are recognized for having contributed an incredible amount to GradPath and its students.",
+                image: goldMedal2023
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB English standard.",
+                image: englishExcellence
+            },
         ]
     },
     {
@@ -219,19 +232,23 @@ export const TutorDetails = [
         ],
         certifications: [
             {
-                description: "Tutors with this certification have met GradPath certification for the IB mathematics standard.",
+                description: "Team members with the Gold Medal are recognized for having contributed an incredible amount to GradPath and its students.",
+                image: goldMedal2023
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB mathematics standard.",
                 image: mathematicsExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB biology standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB biology standard.",
                 image: biologyExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB chemistry standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB chemistry standard.",
                 image: chemistryExcellence
             },
             {
-                description: "Tutors with this certification have met GradPath certification for the IB physics standard.",
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB physics standard.",
                 image: physicsExcellence
             },
         ]
