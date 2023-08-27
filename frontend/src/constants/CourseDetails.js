@@ -3,6 +3,7 @@ import english from "../images/english.png";
 import biology from "../images/biology.png";
 import chemistry from "../images/chemistry.png";
 import physics from "../images/physics.png";
+import ib from "../images/ib.png";
 
 import mathematicsExcellence from "../images/Badges/MathematicsExcellence.png";
 import englishExcellence from "../images/Badges/EnglishExcellence.png";
@@ -19,6 +20,17 @@ import chemistryIB7 from "../images/Badges/ChemistryIB7.png";
 import physicsIB7 from "../images/Badges/PhysicsIB7.png";
 
 export const CourseDetails = [
+    {
+        name: "IB Preparation",
+        image: IB,
+        description: "",
+        curriculum: [
+            "IB Application Personal Questionnaire",
+            "IB Application English Writing Exercise",
+            "IB Application Mathematics Task Preparation",
+            "General Application Guidance"
+        ]
+    },
     {
         name: "Mathematics",
         image: mathematics,

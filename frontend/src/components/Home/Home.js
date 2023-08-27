@@ -281,13 +281,13 @@ const Home = ({setNavColour}) => {
                     </Box>
                 </Box>
             </Slide>
-            <Slide style={{display: "flex", flexDirection: "column", width: "100%", height: "100%", overflowY: "auto"}}>
+            {/*<Slide style={{display: "flex", flexDirection: "column", width: "100%", height: "100%", overflowY: "auto"}}>
                 <Box sx={{display: "flex", width: "100%", height: "100%", bgcolor: "background.main", justifyContent: "center", alignItems: "center"}}>
                     <Box sx={{display: "flex", width: "100vw", height: "90%", marginTop: "5vh", alignItems: "center", justifyContent: "center"}}>
                         <Registration/>
                     </Box>
                 </Box>
-            </Slide>
+            </Slide>*/}
         </FullPage>
     );
 };
