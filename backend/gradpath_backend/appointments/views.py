@@ -28,12 +28,14 @@ class AppointmentsView(APIView):
         current_time_toronto = datetime.now(toronto_tz).strftime('%Y-%m-%d %H:%M:%S')
 
         query = '''
-        SELECT ea_appointments.*, CONCAT(tutor.first_name, ' ', tutor.last_name) AS tutor_name, tutor.email AS tutor_email
+        SELECT ea_appointments.*, CONCAT(tutor.first_name, ' ', tutor.last_name) AS tutor_name, tutor.email AS tutor_email, ea_services.name AS service_name
         FROM ea_appointments
         JOIN ea_users AS customer
         ON ea_appointments.id_users_customer = customer.id
         JOIN ea_users AS tutor
         ON ea_appointments.id_users_provider = tutor.id
+        JOIN ea_services
+        ON ea_appointments.id_services = ea_services.id
         WHERE ea_appointments.end_datetime > %s
         AND ea_appointments.is_unavailable = 0
         AND customer.email = %s
