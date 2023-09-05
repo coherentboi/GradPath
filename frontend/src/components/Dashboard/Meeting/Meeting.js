@@ -38,13 +38,21 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 const Meeting = ({openAccordion, setOpenAccordion, details, index}) => {
 
-    const start = new Date(details.start);
-    const end = new Date(details.end);
+    const start = new Date(details.start_datetime);
 
-    const startTime = start.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-    const endTime = end.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    console.log(start);
 
-    const date = start.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    const startTime = start.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    });
+
+    const date = start.toLocaleDateString('en-US', {
+        year: '2-digit',
+        month: '2-digit',
+        day: '2-digit'
+    });
 
     const handleOpen = (index) => {
         if(index === openAccordion){
@@ -55,21 +63,22 @@ const Meeting = ({openAccordion, setOpenAccordion, details, index}) => {
         }
     }
 
+
     return(
         <Accordion sx={{borderRadius: "0", marginTop: "15px"}} expanded={openAccordion === index} Divider={false}>
             <AccordionSummary sx={{borderRadius: "0"}}>
                 <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", width: "100%", height: "80px", backgroundColor: "primary.main", borderRadius: openAccordion === index ? "4px 4px 0 0" : "4px 4px 4px 4px"}}>
                     <Box sx={{display: "flex", width: "45%", height: "100%", alignItems: "center"}}>
-                        <Typography sx={{color: "background.main", fontWeight: "700", marginLeft: "20px", fontFamily: "Open Sans, sans-serif", fontSize: "18px"}}>
-                            {details.serviceName}
+                        <Typography sx={{color: "background.main", fontWeight: "700", marginLeft: "20px", fontFamily: "Open Sans, sans-serif", fontSize: "16px"}}>
+                            {details.service_name}
                         </Typography>
-                        <Typography sx={{color: "background.main", marginLeft: "20px", fontFamily: "Open Sans, sans-serif", fontSize: "18px"}}>
-                            {details.providerName}
+                        <Typography sx={{color: "background.main", marginLeft: "20px", fontFamily: "Open Sans, sans-serif", fontSize: "16px"}}>
+                            {details.tutor_name}
                         </Typography>
                     </Box>
                     <Box sx={{display: "flex", width: "55%", height: "100%", alignItems: "center", justifyContent: "flex-end"}}>
                         <Typography sx={{color: "background.main", marginRight: "20px", fontFamily: "Open Sans, sans-serif", fontSize: "14px"}}>
-                            {date} - {startTime} to {endTime}
+                            {date} - {startTime}
                         </Typography>
                         <Button onClick={() => {handleOpen(index)}} disableRipple sx={{color: "white", background: "none", ":hover": {filter: "brightness(75%)", transform: "0.3s"}}}>
                             {
@@ -89,7 +98,7 @@ const Meeting = ({openAccordion, setOpenAccordion, details, index}) => {
             <AccordionDetails sx={{borderRadius: "0"}}>
                 <Box sx={{display: "flex", flexDirection: "column", width: "100%", height: "120px", backgroundColor: "background.dark", borderRadius: "0px 0px 4px 4px"}}>
                     <Typography sx={{fontSize: "16px", fontFamily: "Open Sans, sans-serif", marginLeft: "15px", marginTop: "10px"}}>
-                        <b>Tutor Email:</b> {details.providerEmail}
+                        <b>Tutor Email:</b> {details.tutor_email}
                     </Typography>
                     <Box sx={{display: "flex", flexDirection: "row", margin: "10px 5px 10px 5px", flexGrow: "1"}}>
                         <a style={{width: "31%", height: "100%", marginRight: "auto", marginLeft: "auto",}} href={details.google_meet_link} target="_blank" rel="noopener noreferrer">

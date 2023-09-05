@@ -3,7 +3,7 @@ import english from "../images/english.png";
 import biology from "../images/biology.png";
 import chemistry from "../images/chemistry.png";
 import physics from "../images/physics.png";
-import ib from "../images/ib.png";
+import IB from "../images/ib.png";
 
 import mathematicsExcellence from "../images/Badges/MathematicsExcellence.png";
 import englishExcellence from "../images/Badges/EnglishExcellence.png";
@@ -11,6 +11,7 @@ import higherLevelMathematicsExcellence from "../images/Badges/HigherLevelMathem
 import biologyExcellence from "../images/Badges/BiologyExcellence.png";
 import chemistryExcellence from "../images/Badges/ChemistryExcellence.png";
 import physicsExcellence from "../images/Badges/PhysicsExcellence.png";
+import IBPreparation from "../images/Badges/IBPreparation.png";
 
 import mathematicsIB7 from "../images/Badges/MathematicsIB7.png";
 import englishIB7 from "../images/Badges/EnglishIB7.png";
@@ -29,6 +30,12 @@ export const CourseDetails = [
             "IB Application English Writing Exercise",
             "IB Application Mathematics Task Preparation",
             "General Application Guidance"
+        ],
+        certifications: [
+            {
+                description: "Tutors with this certification have met GradPath certification to help upcoming IB students prepare their IB applications.",
+                image: IBPreparation
+            },
         ]
     },
     {
@@ -70,14 +77,11 @@ export const CourseDetails = [
         image: english,
         description: "",
         curriculum: [
-            "Personal Response Essays",
-            "Literary Responses",
-            "Creative Writing",
-            "Shakespeare",
             "IB Paper 1 Close Reading Analysis",
             "IB Paper 2 Global Issues Essay",
             "Individual Oral",
             "HL Essay",
+            "Shakespeare"
         ],
         certifications: [
             {
@@ -112,13 +116,10 @@ export const CourseDetails = [
         description: "",
         curriculum: [
             "Stoichiometric Relationships",
-            "Atomic Structure",
-            "Periodicity",
+            "Atomic Structure and Periodicity",
             "Chemical Bonding and Structure",
             "Thermochemistry",
-            "Acids and Bases",
             "Electrochemistry",
-            "Transition Elements",
             "Organic Chemistry",
         ],
         certifications: [
@@ -140,12 +141,10 @@ export const CourseDetails = [
             "Measurements and Uncertainties",
             "Mechanics",
             "Thermal Physics",
-            "Waves",
+            "Waves and Wave Phenomena",
             "Electricity",
-            "Circular Motion and Gravitation",
+            "Circular Motion, Gravitation and Fields",
             "Energy Production",
-            "Wave Phenomena",
-            "Fields"
         ],
         certifications: [
             {

@@ -96,48 +96,183 @@ const About = ({setNavColour}) => {
                     </Box>
                 </Box>
             </Slide>
-            <Slide style={{display: "flex", width: "100%", height: "100%"}}>
-                <Box sx={{ display: "flex", width: "100%", height: "100%", bgcolor: "background.main"}}>
-                    <Box sx={{width: "100%", height: "86%", marginTop: "14vh", display: "flex", flexDirection: "column", alignItems: "center"}}>
-                        <Box sx={{display: "flex", width: "calc(96% + 10px)", height: "60%", flexDirection: {xs: "column", md: "row"}, alignItems: "center", justifyContent: "center"}}>
-                            <Box sx={{display: "flex", width: {xs: "90%", md: "25%"}, height: "100%", margin: "auto", flexDirection: {xs: "row", md: "column"}, alignItems: "center"}}>
-                                <Box sx={{display: "flex", aspectRatio: "1", width: "80%", margin: "auto", borderRadius: "50%"}}>
-                                    <img src={dropoutImage} style={{width: "100%", height: "100%", aspectRatio: 1, borderRadius: "50%", objectFit: "contain"}} alt="Dropout"/>
+            {/*<Slide style={{display: "flex", width: "100%", height: "100%"}}>
+                <Box sx={{display: "flex", width: "100%", height: "100%", bgcolor: "background.main"}}>
+                    <Box sx={{
+                        width: "100%",
+                        height: "86%",
+                        marginTop: "14vh",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center"
+                    }}>
+                        <Box sx={{
+                            display: "flex",
+                            width: "calc(96% + 10px)",
+                            height: "60%",
+                            flexDirection: {xs: "column", md: "row"},
+                            alignItems: "center",
+                            justifyContent: "center"
+                        }}>
+                            <Box sx={{
+                                display: "flex",
+                                width: {xs: "90%", md: "25%"},
+                                height: "100%",
+                                margin: "auto",
+                                flexDirection: {xs: "row", md: "column"},
+                                alignItems: "center"
+                            }}>
+                                <Box sx={{
+                                    display: "flex",
+                                    aspectRatio: "1",
+                                    width: "80%",
+                                    margin: "auto",
+                                    borderRadius: "50%"
+                                }}>
+                                    <img src={dropoutImage} style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        aspectRatio: 1,
+                                        borderRadius: "50%",
+                                        objectFit: "contain"
+                                    }} alt="Dropout"/>
                                 </Box>
-                                <Box sx={{display: "flex", width: "100%", flexGrow: 1, alignItems: "center", justifyContent: "center", textAlign: "center"}}>
-                                    <Typography sx={{fontSize: {xs: "10px", md: "16px"}, fontFamily: "Open Sans, sans-serif"}}>7 out of 15 students drop out of IB within the first year.</Typography>
+                                <Box sx={{
+                                    display: "flex",
+                                    width: "100%",
+                                    flexGrow: 1,
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    textAlign: "center"
+                                }}>
+                                    <Typography
+                                        sx={{fontSize: {xs: "10px", md: "16px"}, fontFamily: "Open Sans, sans-serif"}}>7
+                                        out of 15 students drop out of IB within the first year.</Typography>
                                 </Box>
                             </Box>
-                            <Box sx={{display: "flex", width: {xs: "90%", md: "25%"}, height: "100%", margin: "auto", flexDirection: {xs: "row", md: "column"}, alignItems: "center"}}>
-                                <Box sx={{display: "flex", aspectRatio: "1", width: "80%", margin: "auto", borderRadius: "50%"}}>
-                                    <img src={failImage} style={{width: "100%", height: "100%", aspectRatio: 1, borderRadius: "50%", objectFit: "contain"}} alt="Fail"/>
+                            <Box sx={{
+                                display: "flex",
+                                width: {xs: "90%", md: "25%"},
+                                height: "100%",
+                                margin: "auto",
+                                flexDirection: {xs: "row", md: "column"},
+                                alignItems: "center"
+                            }}>
+                                <Box sx={{
+                                    display: "flex",
+                                    aspectRatio: "1",
+                                    width: "80%",
+                                    margin: "auto",
+                                    borderRadius: "50%"
+                                }}>
+                                    <img src={failImage} style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        aspectRatio: 1,
+                                        borderRadius: "50%",
+                                        objectFit: "contain"
+                                    }} alt="Fail"/>
                                 </Box>
-                                <Box sx={{display: "flex", width: "100%", flexGrow: 1, alignItems: "center", justifyContent: "center", textAlign: "center"}}>
-                                    <Typography sx={{fontSize: {xs: "10px", md: "16px"}, fontFamily: "Open Sans, sans-serif"}}>Despite completing IB's rigorous curriculum, 23% of students failed their final IB exams.</Typography>
+                                <Box sx={{
+                                    display: "flex",
+                                    width: "100%",
+                                    flexGrow: 1,
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    textAlign: "center"
+                                }}>
+                                    <Typography
+                                        sx={{fontSize: {xs: "10px", md: "16px"}, fontFamily: "Open Sans, sans-serif"}}>Despite
+                                        completing IB's rigorous curriculum, 23% of students failed their final IB
+                                        exams.</Typography>
                                 </Box>
                             </Box>
-                            <Box sx={{display: "flex", width: {xs: "90%", md: "25%"}, height: "100%", margin: "auto", flexDirection: {xs: "row", md: "column"}, alignItems: "center"}}>
-                                <Box sx={{display: "flex", aspectRatio: "1", width: "80%", margin: "auto", borderRadius: "50%", alignItems: "center", justifyContent: "center"}}>
-                                    <img src={stressImage} style={{width: "100%", height: "100%", aspectRatio: 1, borderRadius: "50%", objectFit: "cover"}} alt="Stress"/>
+                            <Box sx={{
+                                display: "flex",
+                                width: {xs: "90%", md: "25%"},
+                                height: "100%",
+                                margin: "auto",
+                                flexDirection: {xs: "row", md: "column"},
+                                alignItems: "center"
+                            }}>
+                                <Box sx={{
+                                    display: "flex",
+                                    aspectRatio: "1",
+                                    width: "80%",
+                                    margin: "auto",
+                                    borderRadius: "50%",
+                                    alignItems: "center",
+                                    justifyContent: "center"
+                                }}>
+                                    <img src={stressImage} style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        aspectRatio: 1,
+                                        borderRadius: "50%",
+                                        objectFit: "cover"
+                                    }} alt="Stress"/>
                                 </Box>
-                                <Box sx={{display: "flex", width: "100%", flexGrow: 1, alignItems: "center", justifyContent: "center", textAlign: "center"}}>
-                                    <Typography sx={{fontSize: {xs: "10px", md: "16px"}, fontFamily: "Open Sans, sans-serif"}}>In a recent survey, over 50% of IB students reported feeling stressed daily.</Typography>
+                                <Box sx={{
+                                    display: "flex",
+                                    width: "100%",
+                                    flexGrow: 1,
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    textAlign: "center"
+                                }}>
+                                    <Typography
+                                        sx={{fontSize: {xs: "10px", md: "16px"}, fontFamily: "Open Sans, sans-serif"}}>In
+                                        a recent survey, over 50% of IB students reported feeling stressed
+                                        daily.</Typography>
                                 </Box>
                             </Box>
                         </Box>
-                        <Box sx={{display: "flex", width: "100%", height: "40%", marginTop: "20px", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-                            <Box sx={{display: "flex", width: "96%", height: "calc(100% - 60px)", bgcolor: "primary.main", flexDirection: "column", borderRadius: "4px", justifyContent: "center", alignItems: "center"}}>
-                                <Typography sx={{color: "background.main", fontSize: {xs: "14px", md: "20px"}, fontFamily: "Open Sans, sans-serif", fontWeight: "500", textAlign: 'center'}}>
-                                    IB is hard but valuable! Don't pass up such a great opportunity! GradPath is here to help!
+                        <Box sx={{
+                            display: "flex",
+                            width: "100%",
+                            height: "40%",
+                            marginTop: "20px",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "center"
+                        }}>
+                            <Box sx={{
+                                display: "flex",
+                                width: "96%",
+                                height: "calc(100% - 60px)",
+                                bgcolor: "primary.main",
+                                flexDirection: "column",
+                                borderRadius: "4px",
+                                justifyContent: "center",
+                                alignItems: "center"
+                            }}>
+                                <Typography sx={{
+                                    color: "background.main",
+                                    fontSize: {xs: "14px", md: "20px"},
+                                    fontFamily: "Open Sans, sans-serif",
+                                    fontWeight: "500",
+                                    textAlign: 'center'
+                                }}>
+                                    IB is hard but valuable! Don't pass up such a great opportunity! GradPath is here to
+                                    help!
                                 </Typography>
-                                <Button onClick={() => {navigate("/auth")}} sx={{color: "black", backgroundColor: "secondary.main", transition: "0.3s", padding: "10px 15px", marginTop: "20px", ":hover": {backgroundColor: "secondary.main", filter: "brightness(75%)"}}}>
+                                <Button onClick={() => {
+                                    navigate("/auth")
+                                }} sx={{
+                                    color: "black",
+                                    backgroundColor: "secondary.main",
+                                    transition: "0.3s",
+                                    padding: "10px 15px",
+                                    marginTop: "20px",
+                                    ":hover": {backgroundColor: "secondary.main", filter: "brightness(75%)"}
+                                }}>
                                     Sign Up Now!
                                 </Button>
                             </Box>
                         </Box>
                     </Box>
                 </Box>
-            </Slide>
+            </Slide>*/}
             <Slide style={{display: "flex", width: "100%", height: "100%"}}>
                 <Box sx={{ display: "flex", width: "100%", height: "100%", bgcolor: "background.main"}}>
                     <Box sx={{ display: "flex", width: "100%", height: "87%", marginTop: "15vh", flexDirection: "column", alignItems: "center"}}>

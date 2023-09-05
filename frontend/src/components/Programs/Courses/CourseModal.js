@@ -51,8 +51,8 @@ const CourseModal = ({details, modalOpen, setModalOpen}) => {
                                 }}/>
                             </Box>
                             <Box sx={{display: "flex", width: {xs: "100%", md: "60%"}, height: "100%", flexDirection: "column"}}>
-                                <Box sx={{display: "flex", width: "calc(100% - 5px)", marginRight: "10px", alignItems: "center"}}>
-                                    <Typography sx={{marginLeft: "5px", marginTop: "5px", fontSize: {xs: "18px", md: "32px"}, fontFamily: "Open Sans, sans-serif", fontWeight: "700", flexGrow: 1}}>
+                                <Box sx={{display: "flex", width: {xs: "calc(100% - 20px)", md: "calc(100% - 10px)"}, marginLeft:{xs: "10px", md: "0px"}, marginRight: "10px", alignItems: "center"}}>
+                                    <Typography sx={{marginTop: "5px", fontSize: {xs: "18px", md: "32px"}, fontFamily: "Open Sans, sans-serif", fontWeight: "700", flexGrow: 1}}>
                                         {details.name}
                                     </Typography>
                                     <Button onClick={() => {navigate("/dashboard")}} sx={{fontSize: {xs: "10px", md: "14px"}, fontFamily: "Open Sans, sans-serif", padding: {xs: "2px 8px", md: "8px 12px"}, backgroundColor: "primary.main", color: "white", marginRight: "5px", ":hover":{backgroundColor: "primary.main", filter: "brightness(75%)", transition: "0.3s"}}}>
@@ -60,18 +60,19 @@ const CourseModal = ({details, modalOpen, setModalOpen}) => {
                                     </Button>
                                     <img src={logo} style={{height: "70px", aspectRatio: 1, alignSelf: "center", marginRight: "5px"}}/>
                                 </Box>
+
                                 <Box sx={{display: "flex", flexDirection: "column", width: "calc(100% - 20px)", margin: "0px 5px"}}>
-                                    <Typography sx={{marginRight: "5px", fontFamily: "Open Sans, sans-serif", fontSize: {xs: "10px",md: "14px"}}}>
+                                    <Typography sx={{fontFamily: "Open Sans, sans-serif", fontSize: {xs: "10px",md: "14px"}}}>
                                         {details.description}
                                     </Typography>
                                 </Box>
-                                <Box sx={{display: "flex", flexDirection: "column", width: "calc(100% - 20px)", margin: "20px 5px 0px 5px", }}>
+                                <Box sx={{display: "flex", flexDirection: "column", width: "calc(100% - 20px)", margin: "20px 5px 0px 0px", }}>
                                     <Typography sx={{fontSize: {xs: "14px", md: "18px"}, fontFamily: "Open Sans, sans-serif", fontWeight: "700", color: "grey", marginBottom: "10px"}}>
-                                        Curriculum:
+                                        Subjects we cover:
                                     </Typography>
-                                    <ul>
+                                    <ul style={{listStyleType: "disc", padding: "0px", marginTop: "5px", marginBottom: "5px"}}>
                                         {details.curriculum.map((curriculum) => (
-                                            <li>
+                                            <li style={{marginLeft: "20px"}}>
                                                 <Typography sx={{marginRight: "5px", fontFamily: "Open Sans, sans-serif", fontSize: {xs: "10px",md: "14px"}}}>
                                                     {curriculum}
                                                 </Typography>
@@ -82,7 +83,7 @@ const CourseModal = ({details, modalOpen, setModalOpen}) => {
                                 <Box sx={{display: "flex", flexDirection: "column", flexGrow: 1, width: "calc(100% - 15px)", marginLeft: "5px", marginRight: "10px"}}>
                                     <Box sx={{display: "flex", flexDirection: "row", width: "100%", marginTop: "20px", marginBottom: "10px", padding: "0px", borderBottom: "1px solid black", alignItems: "center"}}>
                                         <Typography sx={{fontSize: {xs: "14px", md: "18px"}, fontFamily: "Open Sans, sans-serif", fontWeight: "700", marginBottom: "5px", flexGrow: 1, color: "grey"}}>
-                                            Look for tutors with these subject certification badges!
+                                            Subject certifications:
                                         </Typography>
                                     </Box>
                                     <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", flexGrow: 1, width: "100%", overflowX: "auto", marginBottom: "10px", WebkitOverflowScrolling: 'touch'}}>
