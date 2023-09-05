@@ -1,9 +1,11 @@
 //React Imports
 import React, {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 //Component Imports
 import Registration from "./Registration/Registration";
+import Footer from "../Footer/Footer";
 
 //MUI Imports
 import {Box, Button, styled, Typography} from "@mui/material";
@@ -16,7 +18,7 @@ import tutoringImage from "../../images/home_page1_tutoring.png";
 import mathematicsImage from "../../images/home_page2_mathematics.png";
 import englishImage from "../../images/home_page3_english.png";
 import mobileSubjectsImage from "../../images/home_page2_mobile_subjects.png";
-import {Helmet} from "react-helmet";
+
 
 const HalfBox = styled(Box)({
     width: "50%",
@@ -26,7 +28,6 @@ const HalfBox = styled(Box)({
     justifyContent: "center"
 })
 
-
 const Home = ({setNavColour}) => {
 
     const navigate = useNavigate();
@@ -34,6 +35,8 @@ const Home = ({setNavColour}) => {
     const user = JSON.parse(localStorage.getItem("profile"));
 
     const [currentSlide, setCurrentSlide] = useState(0);
+
+    const [free, setFree] = useState(true);
 
     useEffect(() => {
         if(currentSlide === 0){
@@ -45,12 +48,28 @@ const Home = ({setNavColour}) => {
     }, [currentSlide])
 
     return (
-        <FullPage beforeChange={({ to }) => setCurrentSlide(to)} style={{width: "100%", height: "100%"}}>
+        <FullPage beforeChange={({ to }) => setCurrentSlide(to)} style={{width: "100%", height: "100%",}}>
             <Helmet>
                 <title>Home | GradPath</title>
             </Helmet>
-            <Slide style={{display: "flex", width: "100%", height: "100%"}}>
-                <Box sx={{ display: "flex", width: "100%", height: "100%", bgcolor: "background.main"}}>
+            <Slide style={{display: "flex", width: "100%", height: "100%", justifyContent: "center", backgroundColor: "background.main"}}>
+                {
+                    free && (
+                        <Box sx={{backgroundColor: "primary.main", zIndex: "1001", display: "flex", borderRadius: "4px", color: "background.main", height: "60px", width: "calc(100% - 20px)", margin: 'auto', position: "absolute", top: "0", alignItems: "center", justifyContent: "center"}}>
+                            <Box sx={{display: "flex", justifyContent: "flex-end", width: "20%"}}>
+                            </Box>
+                            <Box sx={{display: "flex", width: "60%", justifyContent: "center"}}>
+                                <Typography sx={{fontWeight: "700", textAlign: "center"}}>For a limited time, GradPath tutoring is free! Make sure to get the deal before it expires!</Typography>
+                            </Box>
+                            <Box sx={{display: "flex", justifyContent: "flex-end", width: "20%"}}>
+                                <Button onClick={() => setFree(false)} color="background" sx={{justifySelf: "flex-end", marginLeft: "auto", marginRight: "10px"}}>
+                                    Close
+                                </Button>
+                            </Box>
+                        </Box>
+                    )
+                }
+                <Box sx={{ display: "flex", width: "100%", height: "100%"}}>
                     <Box sx={{width: "100%", height: "100%", display: {xs: "none", md: "flex"}}}>
                         <HalfBox>
                             <Box sx={{display: "flex", flexDirection: "column", width: "calc(95% - 40px)", height: "100%", justifyContent: "center", marginLeft: "40px"}}>
@@ -140,7 +159,7 @@ const Home = ({setNavColour}) => {
                                                 Click below to learn more!
                                             </Typography>
                                         </Box>
-                                        <Button sx={{width: "100%", height: "15%", borderRadius: "0 0 46px 0", color: "white", backgroundColor: "primary.main", ":hover": {backgroundColor: "primary.main", filter: "brightness(75%)"}, transition: "0.3s"}}>
+                                        <Button onClick={() => {navigate("/programs")}} sx={{width: "100%", height: "15%", borderRadius: "0 0 46px 0", color: "white", backgroundColor: "primary.main", ":hover": {backgroundColor: "primary.main", filter: "brightness(75%)"}, transition: "0.3s"}}>
                                             Learn More
                                         </Button>
                                     </Box>
@@ -164,7 +183,7 @@ const Home = ({setNavColour}) => {
                                                 Click below to learn more!
                                             </Typography>
                                         </Box>
-                                        <Button sx={{width: "100%", height: "15%", borderRadius: "0 0 46px 0", color: "white", backgroundColor: "primary.main", ":hover": {backgroundColor: "primary.main", filter: "brightness(75%)"}, transition: "0.3s"}}>
+                                        <Button onClick={() => {navigate("/programs")}} sx={{width: "100%", height: "15%", borderRadius: "0 0 46px 0", color: "white", backgroundColor: "primary.main", ":hover": {backgroundColor: "primary.main", filter: "brightness(75%)"}, transition: "0.3s"}}>
                                             Learn More
                                         </Button>
                                     </Box>
@@ -262,13 +281,13 @@ const Home = ({setNavColour}) => {
                     </Box>
                 </Box>
             </Slide>
-            <Slide style={{display: "flex", width: "100%", height: "100%"}}>
+            {/*<Slide style={{display: "flex", flexDirection: "column", width: "100%", height: "100%", overflowY: "auto"}}>
                 <Box sx={{display: "flex", width: "100%", height: "100%", bgcolor: "background.main", justifyContent: "center", alignItems: "center"}}>
-                    <Box sx={{display: "flex", width: "100vw", height: "90%", marginTop: "10vh", alignItems: "center", justifyContent: "center"}}>
+                    <Box sx={{display: "flex", width: "100vw", height: "90%", marginTop: "5vh", alignItems: "center", justifyContent: "center"}}>
                         <Registration/>
                     </Box>
                 </Box>
-            </Slide>
+            </Slide>*/}
         </FullPage>
     );
 };

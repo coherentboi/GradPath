@@ -1,6 +1,8 @@
 //React Imports
 import React, {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {logout} from "../../actions/auth";
 
 //MUI Material Imports
 import {
@@ -20,9 +22,8 @@ import {
 //Icon Imports
 import MenuIcon from '@mui/icons-material/Menu';
 import GradpathLogo from '../../images/gradpathlogo.svg';
-import {useDispatch, useSelector} from "react-redux";
-import {logout} from "../../actions/auth";
-
+import EmailIcon from '@mui/icons-material/Email';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const pages = ['Programs', 'About'];
 const settings = ['Dashboard', 'Account', 'Logout'];
@@ -115,7 +116,7 @@ const Navbar = ({navColour}) => {
                         <img src={GradpathLogo} alt="logo" style={{ display: { xs: 'none', md: 'flex' }, height: "40px"}} />
                     </Typography>
 
-                    <Box sx={{ width: {xs: "100px"}, flexGrow: {md: 1}, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ width: {xs: "150px"}, flexGrow: {md: 1}, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -187,7 +188,13 @@ const Navbar = ({navColour}) => {
                     </Box>
 
                     {user && (
-                        <Box sx={{width: {xs: "100px"}, display: "flex", flexGrow: {md: 1}, flexDirection: "row", alignItems: "center", justifyContent: "flex-end"}}>
+                        <Box sx={{width: {xs: "150px"}, display: "flex", flexGrow: {md: 1}, flexDirection: "row", alignItems: "center", justifyContent: "flex-end"}}>
+                            <Button href="mailto:info@gradpathtutoring.com" color="inherit" sx={{ transition: '0s', minHeight: 0, minWidth: 0, padding: 0, marginRight: "10px"}}>
+                                <EmailIcon/>
+                            </Button>
+                            <Button href="https://www.instagram.com/gradpathtutoring/" color="inherit" sx={{ transition: '0s', minHeight: 0, minWidth: 0, padding: 0, marginRight: "10px"}}>
+                                <InstagramIcon/>
+                            </Button>
                             <Tooltip title="Open settings">
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                     <Avatar sx={{backgroundColor: navColour === "primary" ? "background.main" : "primary.main", color: navColour === "primary" ? "primary.main" : "background.main"}} alt={user.username}>{user.username.charAt(0)}</Avatar>
@@ -218,7 +225,13 @@ const Navbar = ({navColour}) => {
                         </Box>
                     )}
                     {!user && (
-                        <Box sx={{width: {xs: "100px"}, display: "flex", flexGrow: {md: 1}, flexDirection: "row", alignItems: "center", justifyContent: "flex-end"}}>
+                        <Box sx={{width: {xs: "150px"}, display: "flex", flexGrow: {md: 1}, flexDirection: "row", alignItems: "center", justifyContent: "flex-end"}}>
+                            <Button href="mailto:info@gradpathtutoring.com" color="inherit" sx={{ transition: '0s', minHeight: 0, minWidth: 0, padding: 0, marginRight: {sx: "5px", md: "10px"}}}>
+                                <EmailIcon/>
+                            </Button>
+                            <Button href="https://www.instagram.com/gradpathtutoring/" color="inherit" sx={{ transition: '0s', minHeight: 0, minWidth: 0, padding: 0, marginRight: {sx: "5px", md: "10px"}}}>
+                                <InstagramIcon/>
+                            </Button>
                             <Button
                                 onClick={login}
                                 color="inherit"
