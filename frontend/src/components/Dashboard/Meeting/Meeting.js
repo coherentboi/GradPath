@@ -77,7 +77,7 @@ const Meeting = ({openAccordion, setOpenAccordion, details, index}) => {
                         </Typography>
                     </Box>
                     <Box sx={{display: "flex", width: "55%", height: "100%", alignItems: "center", justifyContent: "flex-end"}}>
-                        <Typography sx={{color: "background.main", marginRight: "20px", fontFamily: "Open Sans, sans-serif", fontSize: "14px"}}>
+                        <Typography sx={{color: "background.main", marginRight: "5px", fontFamily: "Open Sans, sans-serif", fontSize: "14px"}}>
                             {date} - {startTime}
                         </Typography>
                         <Button onClick={() => {handleOpen(index)}} disableRipple sx={{color: "white", background: "none", ":hover": {filter: "brightness(75%)", transform: "0.3s"}}}>

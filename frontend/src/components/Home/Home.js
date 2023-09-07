@@ -59,7 +59,7 @@ const Home = ({setNavColour}) => {
                             <Box sx={{display: "flex", justifyContent: "flex-end", width: "20%"}}>
                             </Box>
                             <Box sx={{display: "flex", width: "60%", justifyContent: "center"}}>
-                                <Typography sx={{fontWeight: "700", textAlign: "center"}}>For a limited time, GradPath tutoring is free! Make sure to get the deal before it expires!</Typography>
+                                <Typography sx={{fontWeight: "700", textAlign: "center"}}>To commemorate our launch, access GradPath tutoring services free-of-cost! Sign up today!</Typography>
                             </Box>
                             <Box sx={{display: "flex", justifyContent: "flex-end", width: "20%"}}>
                                 <Button onClick={() => setFree(false)} color="background" sx={{justifySelf: "flex-end", marginLeft: "auto", marginRight: "10px"}}>
