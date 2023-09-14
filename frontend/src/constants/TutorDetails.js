@@ -4,13 +4,19 @@ import EthanQiu from "../images/Tutors/EthanQiu.png";
 import PaulChen from "../images/Tutors/PaulChen.png";
 import SuHuang from "../images/Tutors/SuHuang.png";
 import EllaQiu from "../images/Tutors/EllaQiu.png";
+import AliceGao from "../images/Tutors/AliceGao.png";
+import RoshanHegde from "../images/Tutors/RoshanHegde.png";
+
 import higherLevelMathematicsIB7 from "../images/Badges/HigherLevelMathematicsIB7.png";
 import higherLevelMathematicsExcellence from "../images/Badges/HigherLevelMathematicsExcellence.png";
 import englishExcellence from "../images/Badges/EnglishExcellence.png";
 import physicsExcellence from "../images/Badges/PhysicsExcellence.png";
+import physicsIB7 from "../images/Badges/PhysicsIB7.png";
 import biologyExcellence from "../images/Badges/BiologyExcellence.png";
+import biologyIB7 from "../images/Badges/BiologyIB7.png";
 import mathematicsIB7 from "../images/Badges/MathematicsIB7.png";
 import mathematicsExcellence from "../images/Badges/MathematicsExcellence.png";
+import chemistryIB7 from "../images/Badges/ChemistryIB7.png";
 import chemistryExcellence from "../images/Badges/ChemistryExcellence.png";
 import goldMedal2023 from "../images/Badges/GoldMedal2023.png";
 
@@ -250,6 +256,94 @@ export const TutorDetails = [
             {
                 description: "Tutors with this certification have met GradPath certification to tutor at the IB physics standard.",
                 image: physicsExcellence
+            },
+        ]
+    },
+    {
+        name: "Alice Gao",
+        role: "Tutor",
+        image: AliceGao,
+        grade: "12",
+        about: "Hi! My name is Alice Gao, and I'm an IB student going into grade 12 with an average of 97.5 in my top 6 subjects including Higher-Level Math as well as Physics and Chemistry. I have been continuously tutoring for over 60 hours during the past 2 years, and have been constantly volunteering for children-related fields such as helping out ASD kids and staffing at science summer camps. Apart from volunteering, I generally enjoy drawing, music composition, as well as long distance running.",
+        school: "Merivale High School",
+        email: "",
+        phone: "",
+        instagram: "",
+        subjectsDescription: "Higher Level Mathematics, Chemistry, Physics",
+        subjects: [
+            "Tutor",
+            "HL Mathematics",
+            "Mathematics",
+            "Chemistry",
+            "Physics"
+        ],
+        certifications: [
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB higher level mathematics standard.",
+                image: higherLevelMathematicsIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB higher level mathematics standard.",
+                image: higherLevelMathematicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB mathematics standard.",
+                image: mathematicsIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB mathematics standard.",
+                image: mathematicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB chemistry standard.",
+                image: chemistryIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB English standard.",
+                image: chemistryExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB physics standard.",
+                image: physicsIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB physics standard.",
+                image: physicsExcellence
+            },
+        ]
+    },
+    {
+        name: "Roshan Hegde",
+        role: "Tutor",
+        image: RoshanHegde,
+        grade: "12",
+        about: "Greetings, I'm Roshan! A math tutor driven by a love for untangling intricate problems and igniting that same passion in my students. Beyond this, I find solace in playing piano and ensuring safety as a lifeguard. My internship as a web developer and designer at a startup widened my horizons and enriched my tech expertise. When I'm not exploring code, I seek solace in swimming or practicing piano, although this summer has mostly been filled with summer school (taking grade 12 CS). Taking on the challenge and succeeding of HL math has only amplified my enthusiasm to teach and share the wonders of mathematics!",
+        school: "Merivale High School",
+        email: "",
+        phone: "",
+        instagram: "",
+        subjectsDescription: "Higher Level Mathematics",
+        subjects: [
+            "Tutor",
+            "HL Mathematics",
+            "Mathematics",
+        ],
+        certifications: [
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB higher level mathematics standard.",
+                image: higherLevelMathematicsIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB higher level mathematics standard.",
+                image: higherLevelMathematicsExcellence
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB mathematics standard.",
+                image: mathematicsIB7
+            },
+            {
+                description: "Tutors with this certification have met GradPath certification to tutor at the IB mathematics standard.",
+                image: mathematicsExcellence
             },
         ]
     },
