@@ -142,56 +142,6 @@ export const TutorDetails = [
         ]
     },
     {
-        name: "Paul Chen",
-        role: "Co-Founder and Tech Co-Lead",
-        image: PaulChen,
-        grade: "12",
-        about: "Hello! I am Paul Chen, an IB student going into Grade 12 currently holding an average of 96 in my top six subjects. My passion for Mathematics and Computer Science has led me to the rigorous Higher-Level Mathematics course, and led me to qualify for prestigious competitions, such as the Canadian Computing Olympiad and the American Invitational Mathematics Examination. Aside from academics, I’ve cultivated a love for music, having completed RCM Level 10 piano with first-class honors.",
-        school: "Merivale High School",
-        email: "",
-        phone: "",
-        instagram: "",
-        subjectsDescription: "Higher Level Mathematics, English, Physics",
-        subjects: [
-            "Tutor",
-            "Management",
-            "HL Mathematics",
-            "Mathematics",
-            "English",
-            "Physics"
-        ],
-        certifications: [
-            {
-                description: "Team members with the Gold Medal are recognized for having contributed an incredible amount to GradPath and its students.",
-                image: goldMedal2023
-            },
-            {
-                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB higher level mathematics standard.",
-                image: higherLevelMathematicsIB7
-            },
-            {
-                description: "Tutors with this certification have met GradPath certification to tutor at the IB higher level mathematics standard.",
-                image: higherLevelMathematicsExcellence
-            },
-            {
-                description: "Tutors with this certification have met GradPath certification to tutor at the highest level (IB level 7) of the IB mathematics standard.",
-                image: mathematicsIB7
-            },
-            {
-                description: "Tutors with this certification have met GradPath certification to tutor at the IB mathematics standard.",
-                image: mathematicsExcellence
-            },
-            {
-                description: "Tutors with this certification have met GradPath certification to tutor at the IB physics standard.",
-                image: physicsExcellence
-            },
-            {
-                description: "Tutors with this certification have met GradPath certification to tutor at the IB English standard.",
-                image: englishExcellence
-            },
-        ]
-    },
-    {
         name: "Ella Qiu",
         role: "Marketing Co-Lead",
         image: EllaQiu,
